@@ -16,6 +16,9 @@ Rubro text(20) NOT NULL,
 PRIMARY KEY (ID_proveedor),
 FOREIGN KEY (CODPOSTAL) REFERENCES CODPOSTAL(ID_CP));
 
+ALTER TABLE Proveedores
+MODIFY COLUMN direccion VARCHAR(500) NOT NULL;
+
 CREATE TABLE USUARIO (
 ID_empleado int NOT NULL,
 Nombreyapellido text(100) NOT NULL,
@@ -23,21 +26,20 @@ Area text(50) NOT NULL,
 PRIMARY KEY (ID_empleado));
 
 CREATE TABLE PRODUCTO (
-ID_producto int NOT NULL auto_increment,
+ID_producto int NOT NULL ,
 ID_proveedor int NOT NULL,
 Descripción varchar(100) NOT NULL,
 Caracteristicas varchar(100) NOT NULL,
-PRIMARY KEY (ID_producto),
-FOREIGN KEY (ID_proveedor) REFERENCES PROVEEDORES(ID_proveedor));	
+PRIMARY KEY (ID_producto,ID_proveedor),
+FOREIGN KEY (ID_proveedor) REFERENCES PROVEEDORES(ID_proveedor));
 
 CREATE TABLE ORDEN_DE_COMPRA (
 ID_producto int NOT NULL,
 ID_pedido int NOT NULL auto_increment,
 Precio int NOT NULL,
-unit int NOT NULL,
 cantidad int NOT NULL,
 UM varchar(2) NOT NULL,
-Especificaciones text(100) NOT NULL,
+Especificaciones VARCHAR(500) NOT NULL,
 usuario int NOT NULL,
 PRIMARY KEY (ID_pedido),
 FOREIGN KEY (ID_producto) REFERENCES PRODUCTO(ID_producto),
@@ -57,21 +59,30 @@ plazo_de_pago varchar(5) NOT NULL,
 cantidad int NOT NULL,
 IVA DECIMAL(18,2) NOT NULL,
 moneda text(3) NOT NULL,
+Total int NOT NULL,
 PRIMARY KEY (ID_factura),
 FOREIGN KEY (ID_producto) REFERENCES PRODUCTO(ID_producto),
 FOREIGN KEY (ID_proveedor) REFERENCES PROVEEDORES(ID_proveedor),
 FOREIGN KEY (plazo_de_pago) REFERENCES CONDICION_PAGO(ID_plazo));
+ 
+CREATE TABLE BANCO ( 
+ID_Banco int NOT NULL,
+nombre_banco text(100));
+
+ALTER TABLE BANCO 
+ADD PRIMARY KEY (ID_Banco);
 
 CREATE TABLE CTACTE_PROVEEDOR (
-ID_Ctacte int NOT NULL auto_increment,
+ID_Ctacte int NOT NULL auto_increment ,
 ID_proveedor int NOT NULL,
 ID_factura int NOT NULL,
-CBU int NOT NULL,
-BANCO varchar(50) NOT NULL,
-PRIMARY KEY (ID_Ctacte),
+CBU Varchar(100) NOT NULL,
+BANCO int NOT NULL,
+PRIMARY KEY (ID_Ctacte,ID_proveedor),
 FOREIGN KEY (ID_proveedor) REFERENCES PROVEEDORES(ID_proveedor),
-FOREIGN KEY (ID_factura) REFERENCES FACTURA(ID_factura));
-	
+FOREIGN KEY (ID_factura) REFERENCES FACTURA(ID_factura),
+FOREIGN KEY (BANCO) REFERENCES BANCO(ID_Banco));
+
 CREATE TABLE METODO_DE_PAGO (
 ID_factura int NOT NULL ,
 ID_pago int NOT NULL auto_increment ,
@@ -90,4 +101,3 @@ Cantidadpedida int NOT NULL,
 primary key (ID_factura,ID_producto),
 FOREIGN KEY (ID_factura) REFERENCES FACTURA(ID_factura),
 FOREIGN KEY (ID_producto) REFERENCES producto(ID_producto));
-		
