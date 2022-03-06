@@ -1,0 +1,35 @@
+-- el sp Ordenarproveedores permite visualizar la lista de proveedores ordenada por el campo nombre o el parametro que se defina
+
+USE entrega1_gaillard;
+DELIMITER //
+CREATE PROCEDURE `Ordenarproveedores`(IN parametro1 CHAR(50))
+BEGIN 
+	IF parametro1 <> '' THEN
+		SET @ordenar = CONCAT('ORDER BY ', parametro1) ;
+ELSE
+SET @ordenar = '' ;
+END IF;
+
+SET @clausula = CONCAT('SELECT * FROM proveedores ', @ordenar, ';');
+PREPARE ejecutarSQL from @clausula;
+EXECUTE ejecutarSQL;
+DEALLOCATE PREPARE ejecutarSQL;
+END //
+
+CALL Ordenarproveedores('nombre') ;
+
+-- el sp sp_crear_producto me permite crear un nuevo producto
+
+USE entrega1_gaillard;
+DELIMITER //
+CREATE PROCEDURE sp_crear_producto(IN parametro1 int, in parametro2 int, in parametro3 char(100), in parametro4 char (100))
+BEGIN
+IF parametro1 <> '' THEN 
+INSERT INTO entrega1_gaillard.producto (ID_producto,ID_proveedor,Descripción,Caracteristicas) VALUES (parametro1,parametro2,parametro3,parametro4);
+SELECT * FROM entrega1_gaillard.producto ORDER BY ID_producto ;
+ELSE 
+SELECT 'Error, no se pudo crear el proveedor';
+END IF;
+END//
+
+CALL sp_crear_producto ('7','2','Paquete de arroz','blanco');
