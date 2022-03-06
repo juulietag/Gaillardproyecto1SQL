@@ -1,0 +1,23 @@
+CREATE DEFINER=`root`@`localhost` FUNCTION `PRECIO_IVA`(param1 int, param2 DECIMAL(18,2)) 
+RETURNS int
+    DETERMINISTIC
+begin
+    DECLARE Resultado INT;
+    set Resultado = (param1*param2);
+    RETURN Resultado;
+    END
+    
+   SELECT PRECIO_IVA(200,1.21) AS PRECIOTOTAL;
+   
+   CREATE DEFINER=`root`@`localhost` FUNCTION `TotalUSD`(precio INT, cantidad int) RETURNS float
+    NO SQL
+begin
+    DECLARE Resultado FLOAT;
+    DECLARE USD FLOAT;
+    SET USD = 108.56;
+    SET Resultado = (precio*cantidad*USD);
+RETURN Resultado;
+END
+
+select TotalUSD(100,2) as precioUSD;
+    
