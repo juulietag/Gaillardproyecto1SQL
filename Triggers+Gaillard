@@ -1,0 +1,72 @@
+-- creacion tabla movimientos factura
+
+CREATE TABLE movimientos_factura (
+id_movimiento INT NOT NULL AUTO_INCREMENT,
+fecha DATETIME NOT NULL,
+usuario_id VARCHAR(45) NULL,
+ID_factura INT NULL, 
+precio FLOAT NULL DEFAULT 0, 
+IVA FLOAT NULL DEFAULT 0, 
+tipo_operacion VARCHAR(200) NULL,
+PRIMARY KEY (id_movimiento));
+
+-- creacion trigger -- creacion trigger que muestra cuando, quien y donde se creo un nueva factura
+
+CREATE TRIGGER ins_mov_factura
+AFTER INSERT ON factura
+FOR EACH ROW
+INSERT INTO movimientos_factura 
+(id_movimiento, fecha, usuario_id, ID_factura, precio, IVA, tipo_operacion)
+VALUES(NULL, NOW(), SESSION_USER(), NEW.ID_factura, NEW.precio, NEW.IVA, 'INSERT: Se insertó un nuevo registro en la tabla FACTURA.');
+
+-- prueba de si el trigger funciona
+INSERT INTO factura 
+VALUES (6, 3, 10026, 100, 'P030', 250000, 21.00, 'ARS', 30250000, '2021-11-13');
+SELECT * FROM movimientos_factura;
+SELECT * FROM FACTURA;
+
+-- trigger muestra mensaje si la factura tiene fecha anterior al 2021
+delimiter //
+CREATE TRIGGER fechafactura_check 
+BEFORE INSERT ON factura
+FOR EACH ROW
+BEGIN DECLARE msg VARCHAR(500);
+IF (NEW.Fecha < '2021-01-01' ) THEN 
+SET msg = "NO SE PERMINTEN FACT ANTERIORES A 2021";
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
+END IF;
+END//
+
+--prueba del trigger
+INSERT INTO factura 
+VALUES (2, 5, 10027, 100, 'P030', 250000, 21.00, 'ARS', 30250000, '2020-11-13');
+SELECT * FROM movimientos_factura;
+SELECT * FROM FACTURA;
+
+--creacion tabla que muestra los movimentos realizados en la tabla producto
+
+CREATE TABLE movimientos_producto (
+id_movimiento INT NOT NULL AUTO_INCREMENT,
+fecha DATE NOT NULL,
+hora TIME,
+usuario_id VARCHAR(45) NULL,
+base_de_datos VARCHAR(50) NULL,
+ID_producto INT NULL,
+Descripción VARCHAR(50), 
+tipo_operacion VARCHAR(200) NULL,
+PRIMARY KEY (id_movimiento));
+
+-- creacion trigger que muestra cuando, quien y donde se creo un nuevo producto
+CREATE TRIGGER ins_productos
+AFTER INSERT ON producto
+FOR EACH ROW
+INSERT INTO movimientos_producto
+(id_movimiento, fecha, hora, usuario_id, base_de_datos, ID_producto, Descripción, tipo_operacion)
+VALUES(NULL, CURRENT_DATE(), CURRENT_TIME(), USER(), DATABASE(), NEW.ID_producto, NEW.Descripción, 'INSERT: Se insertó un nuevo registro en la tabla PRODUCTO.');
+
+-- prueba del trigger
+INSERT INTO producto
+VALUES (8, 4, 'Paquete de arroz', 'Integral');
+SELECT * FROM movimientos_producto;
+SELECT * FROM PRODUCTO;
+
