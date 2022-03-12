@@ -50,7 +50,6 @@ ID_plazo varchar(5) NOT NULL,
 Condicion varchar(50) NOT NULL,
 PRIMARY KEY (ID_plazo));
 
-
 CREATE TABLE FACTURA (
 ID_producto int NOT NULL,
 ID_proveedor int NOT NULL,
@@ -105,3 +104,43 @@ Cantidadpedida int NOT NULL,
 primary key (ID_factura,ID_producto),
 FOREIGN KEY (ID_factura) REFERENCES FACTURA(ID_factura),
 FOREIGN KEY (ID_producto) REFERENCES producto(ID_producto));
+
+CREATE VIEW vista_factura_condicionpago
+AS SELECT
+   ID_factura AS N_Fact, 
+   Total,
+   Condicion AS Plazo_pago,
+   Fecha
+FROM
+    factura,
+    condicion_pago
+WHERE
+    plazo_de_pago = ID_plazo;
+
+CREATE VIEW vista_totalxproveedor
+as SELECT proveedores.nombre, factura.Fecha, sum(factura.total), factura.ID_factura
+FROM proveedores
+INNER JOIN factura ON proveedores.ID_proveedor=factura.ID_proveedor
+GROUP BY nombre
+ORDER BY nombre;
+
+CREATE VIEW vista_proveedores
+AS SELECT
+   ID_proveedor,
+   nombre AS RazonSocial, 
+   Contacto
+FROM
+    proveedores
+ORDER BY nombre;
+
+CREATE VIEW VISTA_TOTAL_PROV_INALPA
+AS SELECT SUM(Total), proveedores.nombre
+FROM factura
+INNER JOIN proveedores ON factura.ID_proveedor=proveedores.ID_proveedor 
+WHERE proveedores.nombre like 'inalp%';
+
+CREATE VIEW Facturas_IVA_21
+AS
+SELECT ID_factura, cantidad, precio, moneda,IVA  
+FROM factura
+WHERE IVA = 21.00;
