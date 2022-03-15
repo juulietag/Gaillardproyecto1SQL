@@ -1,0 +1,11 @@
+-- Creo el usuario1 que tiene solo permiso para visualizar las tablas de la base de datos entrega1_gaillard
+
+CREATE USER 'usuario1'@'localhost' IDENTIFIED BY 'PASSDEFAULT';
+GRANT SELECT ON entrega1_gaillard.* TO 'usuario1'@'localhost';
+
+-- Creo el usuario2 que tiene permiso para visualizar, modificar e insertar datos en la tabla factura de la base de datos entrega1_gaillard
+
+CREATE USER 'usuario2'@'localhost' IDENTIFIED BY 'PASSWORD';
+GRANT SELECT ON entrega1_gaillard.factura TO 'usuario2'@'localhost';
+GRANT UPDATE ON entrega1_gaillard.factura TO 'usuario2'@'localhost';
+GRANT INSERT ON entrega1_gaillard.factura TO 'usuario2'@'localhost';
