@@ -1,3 +1,7 @@
+**********************************************
+Creacion de Base de datos, tablas y columnas
+**********************************************
+
 Create database Entregafinal_Gaillard;
 USE Entregafinal_Gaillard;
 
