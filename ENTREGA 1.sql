@@ -1,5 +1,5 @@
-Create database Entrega1_Gaillard;
-USE Entrega1_Gaillard;
+Create database Entregafinal_Gaillard;
+USE Entregafinal_Gaillard;
 
 CREATE TABLE CODPOSTAL (
 ID_CP int NOT NULL,
