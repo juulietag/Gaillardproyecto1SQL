@@ -1,111 +1,13 @@
-Create database Entrega2_Gaillard;
-USE Entrega2_Gaillard;
+-- *****************************************
+-- ENTREGA FINAL CURSO SQL PARTE 2
+-- Autor: GAILLARD, JULIETA ANAHI
+-- Fecha 03/04/2022
+-- Version: 1.0
+-- Revisado por: 
+-- *****************************************
 
-CREATE TABLE CODPOSTAL (
-ID_CP int NOT NULL,
-Ciudad varchar(50) NOT NULL,
-PRIMARY KEY (ID_CP));
 
-CREATE TABLE PROVEEDORES (
-ID_proveedor int NOT NULL auto_increment,
-nombre varchar(50) NOT NULL	,
-direccion varchar(50) NOT NULL,
-CODPOSTAL int NOT NULL,
-Contacto varchar(50) NOT NULL,
-Rubro text(20) NOT NULL,
-PRIMARY KEY (ID_proveedor),
-FOREIGN KEY (CODPOSTAL) REFERENCES CODPOSTAL(ID_CP));
-
-ALTER TABLE Proveedores
-MODIFY COLUMN direccion VARCHAR(500) NOT NULL;
-
-CREATE TABLE USUARIO (
-ID_empleado int NOT NULL,
-Nombreyapellido text(100) NOT NULL,
-Area text(50) NOT NULL,
-PRIMARY KEY (ID_empleado));
-
-CREATE TABLE PRODUCTO (
-ID_producto int NOT NULL ,
-ID_proveedor int NOT NULL,
-Descripción varchar(100) NOT NULL,
-Caracteristicas varchar(100) NOT NULL,
-PRIMARY KEY (ID_producto,ID_proveedor),
-FOREIGN KEY (ID_proveedor) REFERENCES PROVEEDORES(ID_proveedor));
-
-CREATE TABLE ORDEN_DE_COMPRA (
-ID_producto int NOT NULL,
-ID_pedido int NOT NULL auto_increment,
-Precio int NOT NULL,
-cantidad int NOT NULL,
-UM varchar(2) NOT NULL,
-Especificaciones VARCHAR(500) NOT NULL,
-usuario int NOT NULL,
-PRIMARY KEY (ID_pedido),
-FOREIGN KEY (ID_producto) REFERENCES PRODUCTO(ID_producto),
-FOREIGN KEY (usuario) REFERENCES USUARIO(ID_empleado));
-
-CREATE TABLE CONDICION_PAGO (
-ID_plazo varchar(5) NOT NULL,
-Condicion varchar(50) NOT NULL,
-PRIMARY KEY (ID_plazo));
-
-CREATE TABLE FACTURA (
-ID_producto int NOT NULL,
-ID_proveedor int NOT NULL,
-ID_factura int NOT NULL,
-precio int NOT NULL,
-plazo_de_pago varchar(5) NOT NULL,
-cantidad int NOT NULL,
-IVA DECIMAL(18,2) NOT NULL,
-moneda text(3) NOT NULL,
-Total int NOT NULL,
-PRIMARY KEY (ID_factura),
-FOREIGN KEY (ID_producto) REFERENCES PRODUCTO(ID_producto),
-FOREIGN KEY (ID_proveedor) REFERENCES PROVEEDORES(ID_proveedor),
-FOREIGN KEY (plazo_de_pago) REFERENCES CONDICION_PAGO(ID_plazo));
- 
-ALTER TABLE Factura 
- ADD Column Fecha date not null ; 
- 
-CREATE TABLE BANCO ( 
-ID_Banco int NOT NULL,
-nombre_banco text(100));
-
-ALTER TABLE BANCO 
-ADD PRIMARY KEY (ID_Banco);
-
-CREATE TABLE CTACTE_PROVEEDOR (
-ID_Ctacte int NOT NULL auto_increment ,
-ID_proveedor int NOT NULL,
-ID_factura int NOT NULL,
-CBU Varchar(100) NOT NULL,
-BANCO int NOT NULL,
-PRIMARY KEY (ID_Ctacte,ID_proveedor),
-FOREIGN KEY (ID_proveedor) REFERENCES PROVEEDORES(ID_proveedor),
-FOREIGN KEY (ID_factura) REFERENCES FACTURA(ID_factura),
-FOREIGN KEY (BANCO) REFERENCES BANCO(ID_Banco));
-
-CREATE TABLE METODO_DE_PAGO (
-ID_factura int NOT NULL ,
-ID_pago int NOT NULL auto_increment ,
-Fecha_pago DATE NOT NULL,
-monto int NOT NULL,
-moneda varchar(3) NOT NULL,
-Ctacte_proveedor int NOT NULL, 
-PRIMARY KEY (ID_pago),
-FOREIGN KEY (ID_factura) REFERENCES FACTURA(ID_factura),
-FOREIGN KEY (Ctacte_proveedor) REFERENCES CTACTE_PROVEEDOR(ID_Ctacte));    
-							 
-CREATE TABLE Fact_prod (
-ID_factura int NOT NULL,
-ID_producto int NOT NULL,
-Cantidadpedida int NOT NULL,
-primary key (ID_factura,ID_producto),
-FOREIGN KEY (ID_factura) REFERENCES FACTURA(ID_factura),
-FOREIGN KEY (ID_producto) REFERENCES producto(ID_producto));
-
--- Crea la vista de la factura con el detalle de la condicion de pago para que el usuario pueda ver la info mas clara de cuando se debe pagar
+-- Crea la vista de la factura con el detalle de la condicion de pago para que el usuario pueda ver la info mas clara de cuando se debe pagar --
 
 CREATE VIEW vista_factura_condicionpago
 AS SELECT
@@ -119,16 +21,16 @@ FROM
 WHERE
     plazo_de_pago = ID_plazo;
     
-  -- Crea la vista de la suma total a pagar por proveedor 
+  -- Crea la vista de la suma total a pagar por proveedor --
 
 CREATE VIEW vista_totalxproveedor
-as SELECT proveedores.nombre, factura.Fecha, sum(factura.total), 
+as SELECT proveedores.nombre, factura.Fecha, sum(factura.total)
 FROM proveedores
 INNER JOIN factura ON proveedores.ID_proveedor=factura.ID_proveedor
 GROUP BY nombre
 ORDER BY nombre;
 
--- Crea la vista del proveedor y su numero de contacto 
+-- Crea la vista del proveedor y su numero de contacto --
 
 CREATE VIEW vista_proveedores
 AS SELECT
@@ -139,7 +41,7 @@ FROM
     proveedores
 ORDER BY nombre;
 
--- Crea la vista de la suma del total de un proveedor especifico, en este caso INALPA
+-- Crea la vista de la suma del total de un proveedor especifico, en este caso INALPA --
 
 CREATE VIEW VISTA_TOTAL_PROV_INALPA
 AS SELECT SUM(Total), proveedores.nombre
@@ -147,7 +49,7 @@ FROM factura
 INNER JOIN proveedores ON factura.ID_proveedor=proveedores.ID_proveedor 
 WHERE proveedores.nombre like 'inalp%';
 
--- Crea la vista de las facturas que tienen IVA del 21%
+-- Crea la vista de las facturas que tienen IVA del 21% --
 
 CREATE VIEW Facturas_IVA_21
 AS
@@ -155,7 +57,7 @@ SELECT ID_factura, cantidad, precio, moneda,IVA
 FROM factura
 WHERE IVA = 21.00;
 
--- Crea la funcion para calcular el precio  de un producto con IVA
+-- Crea la funcion para calcular el precio  de un producto con IVA --
 
 CREATE DEFINER=`root`@`localhost` FUNCTION `PRECIO_IVA`(param1 int, param2 DECIMAL(18,2)) 
 RETURNS int
@@ -164,12 +66,13 @@ begin
     DECLARE Resultado INT;
     set Resultado = (param1*param2);
     RETURN Resultado;
-    END
- -- ejemplo de prueba de la funcion 
-   SELECT PRECIO_IVA(200,1.21) AS PRECIOTOTAL;
+    END;
+    
+ -- ejemplo de prueba de la funcion -- 
+SELECT PRECIO_IVA(200,1.21) AS PRECIOTOTAL;
    
    
-   -- Creacion de la una funcion que muestra el total a pagar si la factura es en dolares
+   -- Creacion de la una funcion que muestra el total a pagar si la factura es en dolares --
    
    CREATE DEFINER=`root`@`localhost` FUNCTION `TotalUSD`(precio INT, cantidad int) RETURNS float
     NO SQL
@@ -179,13 +82,13 @@ begin
     SET USD = 108.56;
     SET Resultado = (precio*cantidad*USD);
 RETURN Resultado;
-END
+END;
  -- ejemplo de prueba de la funcion 
 select TotalUSD(100,2) as precioUSD;
 
--- el sp Ordenarproveedores permite visualizar la lista de proveedores ordenada por el campo nombre o el parametro que se defina
+-- el sp Ordenarproveedores permite visualizar la lista de proveedores ordenada por el campo nombre o el parametro que se defina --
 
-USE entrega1_gaillard;
+USE entregafinal_gaillard;
 DELIMITER //
 CREATE PROCEDURE `Ordenarproveedores`(IN parametro1 CHAR(50))
 BEGIN 
@@ -203,9 +106,9 @@ END //
 
 CALL Ordenarproveedores('nombre') ;
 
--- el sp sp_crear_producto me permite crear un nuevo producto
+-- el sp sp_crear_producto me permite crear un nuevo producto --
 
-USE entrega1_gaillard;
+USE entregafinal_gaillard;
 DELIMITER //
 CREATE PROCEDURE sp_crear_producto(IN parametro1 int, in parametro2 int, in parametro3 char(100), in parametro4 char (100))
 BEGIN
@@ -217,9 +120,9 @@ SELECT 'Error, no se pudo crear el proveedor';
 END IF;
 END//
 
-CALL sp_crear_producto ('7','2','Paquete de arroz','blanco');
+CALL sp_crear_producto ('10','3','Paquete de arroz','blanco');
 
--- creacion tabla movimientos factura
+-- creacion tabla movimientos factura --
 
 CREATE TABLE movimientos_factura (
 id_movimiento INT NOT NULL AUTO_INCREMENT,
@@ -231,7 +134,7 @@ IVA FLOAT NULL DEFAULT 0,
 tipo_operacion VARCHAR(200) NULL,
 PRIMARY KEY (id_movimiento));
 
--- creacion trigger -- creacion trigger que muestra cuando, quien y donde se creo un nueva factura
+-- creacion creacion trigger que muestra cuando, quien y donde se creo un nueva factura --
 
 CREATE TRIGGER ins_mov_factura
 AFTER INSERT ON factura
@@ -240,13 +143,13 @@ INSERT INTO movimientos_factura
 (id_movimiento, fecha, usuario_id, ID_factura, precio, IVA, tipo_operacion)
 VALUES(NULL, NOW(), SESSION_USER(), NEW.ID_factura, NEW.precio, NEW.IVA, 'INSERT: Se insertó un nuevo registro en la tabla FACTURA.');
 
--- prueba de si el trigger funciona
+-- prueba de si el trigger funciona --
 INSERT INTO factura 
 VALUES (6, 3, 10026, 100, 'P030', 250000, 21.00, 'ARS', 30250000, '2021-11-13');
 SELECT * FROM movimientos_factura;
 SELECT * FROM FACTURA;
 
--- trigger muestra mensaje si la factura tiene fecha anterior al 2021
+-- trigger muestra mensaje si la factura tiene fecha anterior al 2021 --
 delimiter //
 CREATE TRIGGER fechafactura_check 
 BEFORE INSERT ON factura
@@ -258,13 +161,13 @@ SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
 END IF;
 END//
 
---prueba del trigger
+-- prueba del trigger con fecha anterior a 2021 --
 INSERT INTO factura 
 VALUES (2, 5, 10027, 100, 'P030', 250000, 21.00, 'ARS', 30250000, '2020-11-13');
 SELECT * FROM movimientos_factura;
 SELECT * FROM FACTURA;
 
---creacion tabla que muestra los movimentos realizados en la tabla producto
+-- creacion tabla que muestra los movimentos realizados en la tabla producto --
 
 CREATE TABLE movimientos_producto (
 id_movimiento INT NOT NULL AUTO_INCREMENT,
@@ -277,7 +180,7 @@ Descripción VARCHAR(50),
 tipo_operacion VARCHAR(200) NULL,
 PRIMARY KEY (id_movimiento));
 
--- creacion trigger que muestra cuando, quien y donde se creo un nuevo producto
+-- creacion trigger que muestra cuando, quien y donde se creo un nuevo producto --
 CREATE TRIGGER ins_productos
 AFTER INSERT ON producto
 FOR EACH ROW
@@ -285,7 +188,7 @@ INSERT INTO movimientos_producto
 (id_movimiento, fecha, hora, usuario_id, base_de_datos, ID_producto, Descripción, tipo_operacion)
 VALUES(NULL, CURRENT_DATE(), CURRENT_TIME(), USER(), DATABASE(), NEW.ID_producto, NEW.Descripción, 'INSERT: Se insertó un nuevo registro en la tabla PRODUCTO.');
 
--- prueba del trigger
+-- prueba del trigger --
 INSERT INTO producto
 VALUES (8, 4, 'Paquete de arroz', 'Integral');
 SELECT * FROM movimientos_producto;
