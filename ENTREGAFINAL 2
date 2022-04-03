@@ -6,8 +6,7 @@
 -- Revisado por: 
 -- *****************************************
 
-
--- Crea la vista de la factura con el detalle de la condicion de pago para que el usuario pueda ver la info mas clara de cuando se debe pagar --
+-- Crea la vista de la factura con el detalle de la condición de pago --
 
 CREATE VIEW vista_factura_condicionpago
 AS SELECT
