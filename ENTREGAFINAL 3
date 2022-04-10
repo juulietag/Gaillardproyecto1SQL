@@ -1,0 +1,729 @@
+CREATE DATABASE  IF NOT EXISTS `entregafinal_gaillard` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `entregafinal_gaillard`;
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: entregafinal_gaillard
+-- ------------------------------------------------------
+-- Server version	8.0.27
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `banco`
+--
+
+DROP TABLE IF EXISTS `banco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `banco` (
+  `ID_Banco` int NOT NULL,
+  `nombre_banco` text,
+  PRIMARY KEY (`ID_Banco`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `banco`
+--
+
+LOCK TABLES `banco` WRITE;
+/*!40000 ALTER TABLE `banco` DISABLE KEYS */;
+INSERT INTO `banco` VALUES (7,'BANCO DE GALICIA Y BUENOS AIRES S.A.U.'),(11,'BANCO DE LA NACION ARGENTINA'),(14,'BANCO DE LA PROVINCIA DE BUENOS AIRES'),(15,'INDUSTRIAL AND COMMERCIAL BANK OF CHINA'),(16,'CITIBANK N.A.'),(17,'BANCO BBVA ARGENTINA S.A.'),(20,'BANCO DE LA PROVINCIA DE CORDOBA S.A.'),(27,'BANCO SUPERVIELLE S.A.'),(29,'BANCO DE LA CIUDAD DE BUENOS AIRES'),(34,'BANCO PATAGONIA S.A.'),(44,'BANCO HIPOTECARIO S.A.'),(45,'BANCO DE SAN JUAN S.A.'),(65,'BANCO MUNICIPAL DE ROSARIO'),(72,'BANCO SANTANDER RIO S.A.'),(83,'BANCO DEL CHUBUT S.A.'),(86,'BANCO DE SANTA CRUZ S.A.'),(93,'BANCO DE LA PAMPA SOCIEDAD DE ECONOMIA M'),(94,'BANCO DE CORRIENTES S.A.'),(97,'BANCO PROVINCIA DEL NEUQUÃ‰N SOCIEDAD ANÃ“'),(143,'BRUBANK S.A.U.'),(147,'BANCO INTERFINANZAS S.A.'),(150,'HSBC BANK ARGENTINA S.A.'),(158,'OPEN BANK ARGENTINA S.A.'),(165,'JPMORGAN CHASE BANK, NATIONAL ASSOCIATIO'),(191,'BANCO CREDICOOP COOPERATIVO LIMITADO'),(198,'BANCO DE VALORES S.A.'),(247,'BANCO ROELA S.A.'),(254,'BANCO MARIVA S.A.'),(259,'BANCO ITAU ARGENTINA S.A.'),(262,'BANK OF AMERICA, NATIONAL ASSOCIATION'),(266,'BNP PARIBAS'),(268,'BANCO PROVINCIA DE TIERRA DEL FUEGO'),(269,'BANCO DE LA REPUBLICA ORIENTAL DEL URUGU'),(277,'BANCO SAENZ S.A.'),(281,'BANCO MERIDIAN S.A.'),(285,'BANCO MACRO S.A.'),(299,'BANCO COMAFI SOCIEDAD ANONIMA'),(300,'BANCO DE INVERSION Y COMERCIO EXTERIOR S'),(301,'BANCO PIANO S.A.'),(305,'BANCO JULIO SOCIEDAD ANONIMA'),(309,'BANCO RIOJA SOCIEDAD ANONIMA UNIPERSONAL'),(310,'BANCO DEL SOL S.A.'),(311,'NUEVO BANCO DEL CHACO S. A.'),(312,'BANCO VOII S.A.'),(315,'BANCO DE FORMOSA S.A.'),(319,'BANCO CMF S.A.'),(321,'BANCO DE SANTIAGO DEL ESTERO S.A.'),(322,'BANCO INDUSTRIAL S.A.'),(330,'NUEVO BANCO DE SANTA FE SOCIEDAD ANONIMA'),(331,'BANCO CETELEM ARGENTINA S.A.'),(332,'BANCO DE SERVICIOS FINANCIEROS S.A.'),(336,'BANCO BRADESCO ARGENTINA S.A.U.'),(338,'BANCO DE SERVICIOS Y TRANSACCIONES S.A.'),(339,'RCI BANQUE S.A.'),(340,'BACS BANCO DE CREDITO Y SECURITIZACION S'),(341,'BANCO MASVENTAS S.A.'),(384,'WILOBANK S.A.'),(386,'NUEVO BANCO DE ENTRE RIOS S.A.'),(389,'BANCO COLUMBIA S.A.'),(426,'BANCO BICA S.A.'),(431,'BANCO COINAG S.A.'),(432,'BANCO DE COMERCIO S.A.'),(435,'BANCO SUCREDITO REGIONAL S.A.U.'),(448,'BANCO DINO S.A.'),(515,'BANK OF CHINA LIMITED SUCURSAL BUENOS AI'),(44059,'FORD CREDIT COMPANIA FINANCIERA S.A.'),(44077,'COMPANIA FINANCIERA ARGENTINA S.A.'),(44088,'VOLKSWAGEN FINANCIAL SERVICES COMPANIA F'),(44090,'CORDIAL COMPANIA FINANCIERA S.A.'),(44092,'FCA COMPANIA FINANCIERA S.A.'),(44093,'GPAT COMPANIA FINANCIERA S.A.U.'),(44094,'MERCEDES-BENZ COMPANIA FINANCIERA ARGENT'),(44095,'ROMBO COMPANIA FINANCIERA S.A.'),(44096,'JOHN DEERE CREDIT COMPANIA FINANCIERA S.'),(44098,'PSA FINANCE ARGENTINA COMPANIA FINANCIER'),(44099,'TOYOTA COMPANIA FINANCIERA DE ARGENTINA'),(45030,'NARANJA DIGITAL COMPANIA FINANCIERA S.A.'),(45056,'MONTEMAR COMPANIA FINANCIERA S.A.'),(45072,'TRANSATLANTICA COMPANIA FINANCIERA S.A.'),(65203,'CREDITO REGIONAL COMPANIA FINANCIERA S.A');
+/*!40000 ALTER TABLE `banco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `codpostal`
+--
+
+DROP TABLE IF EXISTS `codpostal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `codpostal` (
+  `ID_CP` int NOT NULL,
+  `Ciudad` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID_CP`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `codpostal`
+--
+
+LOCK TABLES `codpostal` WRITE;
+/*!40000 ALTER TABLE `codpostal` DISABLE KEYS */;
+INSERT INTO `codpostal` VALUES (1002,'CABA - Monserrat'),(1003,'CABA - San Nicolas'),(1004,'CABA - San Nicolas'),(1005,'CABA - San Nicolas'),(1006,'CABA - Retiro'),(1007,'CABA - Retiro'),(1008,'CABA - Monserrat'),(1009,'CABA - San Nicolas'),(1010,'CABA - San Nicolas'),(1011,'CABA - Retiro'),(1012,'CABA - Monserrat'),(1013,'CABA - San Nicolas'),(1014,'CABA - Recoleta'),(1015,'CABA - San Nicolas'),(1016,'CABA - Recoleta'),(1017,'CABA - San Nicolas'),(1018,'CABA - Recoleta'),(1019,'CABA - Recoleta'),(1020,'CABA - Recoleta'),(1021,'CABA - Recoleta'),(1022,'CABA - Recoleta'),(1023,'CABA - Balvanera'),(1024,'CABA - Balvanera'),(1025,'CABA - Recoleta'),(1026,'CABA - Balvanera'),(1027,'CABA - Balvanera'),(1028,'CABA - Balvanera'),(1029,'CABA - Balvanera'),(1030,'CABA - Balvanera'),(1031,'CABA - Balvanera'),(1032,'CABA - Balvanera'),(1033,'CABA - Monserrat'),(1034,'CABA - Balvanera'),(1035,'CABA - Monserrat'),(1036,'CABA - San Nicolas'),(1037,'CABA - San Nicolas'),(1038,'CABA - San Nicolas'),(1039,'CABA - Balvanera'),(1040,'CABA - Balvanera'),(1041,'CABA - San Nicolas'),(1042,'CABA - San Nicolas'),(1043,'CABA - San Nicolas'),(1044,'CABA - Balvanera'),(1045,'CABA - Balvanera'),(1046,'CABA - Balvanera'),(1047,'CABA - San Nicolas'),(1048,'CABA - San Nicolas'),(1049,'CABA - San Nicolas'),(1050,'CABA - Balvanera'),(1051,'CABA - Balvanera'),(1052,'CABA - Balvanera'),(1053,'CABA - San Nicolas'),(1054,'CABA - Retiro'),(1055,'CABA - San Nicolas'),(1056,'CABA - Recoleta'),(1057,'CABA - Retiro'),(1058,'CABA - Retiro'),(1059,'CABA - Retiro'),(1060,'CABA - Recoleta'),(1061,'CABA - Recoleta'),(1062,'CABA - San Nicolas'),(1063,'CABA - San Telmo'),(1064,'CABA - San Telmo'),(1065,'CABA - San Telmo'),(1066,'CABA - San Telmo'),(1067,'CABA - Monserrat'),(1068,'CABA - Constitucion'),(1069,'CABA - San Telmo'),(1070,'CABA - San Telmo'),(1071,'CABA - Constitucion'),(1072,'CABA - Constitucion'),(1073,'CABA - Constitucion'),(1074,'CABA - Constitucion'),(1075,'CABA - Constitucion'),(1076,'CABA - Constitucion'),(1077,'CABA - Constitucion'),(1078,'CABA - Constitucion'),(1079,'CABA - Monserrat'),(1080,'CABA - Balvanera'),(1081,'CABA - Balvanera'),(1082,'CABA - Balvanera'),(1083,'CABA - Balvanera'),(1084,'CABA - Monserrat'),(1085,'CABA - Monserrat'),(1086,'CABA - Monserrat'),(1087,'CABA - Monserrat'),(1088,'CABA - Monserrat'),(1089,'CABA - Monserrat'),(1090,'CABA - Balvanera'),(1091,'CABA - Monserrat'),(1092,'CABA - Monserrat'),(1093,'CABA - Monserrat'),(1094,'CABA - Balvanera'),(1095,'CABA - Monserrat'),(1096,'CABA - Monserrat'),(1097,'CABA - Monserrat'),(1098,'CABA - San Telmo'),(1099,'CABA - San Telmo'),(1100,'CABA - Constitucion'),(1101,'CABA - San Telmo'),(1102,'CABA - San Telmo'),(1103,'CABA - San Telmo'),(1104,'CABA - Zona Puerto'),(1105,'CABA - Comunicaciones'),(1106,'CABA - Zona Puerto'),(1107,'CABA - Zona Puerto'),(1108,'CABA - Monserrat'),(1109,'CABA - Monserrat'),(1110,'CABA - Monserrat'),(1111,'CABA - Recoleta'),(1112,'CABA - Recoleta'),(1113,'CABA - Recoleta'),(1114,'CABA - Recoleta'),(1115,'CABA - Recoleta'),(1116,'CABA - Recoleta'),(1117,'CABA - Recoleta'),(1118,'CABA - Recoleta'),(1119,'CABA - Recoleta'),(1120,'CABA - Recoleta'),(1121,'CABA - Recoleta'),(1122,'CABA - Recoleta'),(1123,'CABA - Recoleta'),(1124,'CABA - Recoleta'),(1125,'CABA - Recoleta'),(1126,'CABA - Recoleta'),(1127,'CABA - Recoleta'),(1128,'CABA - Recoleta'),(1129,'CABA - Recoleta'),(1130,'CABA - Constitucion'),(1131,'Ciudad Autonoma Buenos Aires'),(1132,'Ciudad Autonoma Buenos Aires'),(1133,'CABA - Constitucion'),(1134,'CABA - Constitucion'),(1135,'CABA - Constitucion'),(1136,'CABA - Constitucion'),(1137,'CABA - Constitucion'),(1138,'CABA - Constitucion'),(1139,'CABA - Constitucion'),(1140,'CABA - Constitucion'),(1141,'CABA - Constitucion'),(1142,'Ciudad Autonoma Buenos Aires'),(1143,'CABA - Constitucion'),(1144,'Ciudad Autonoma Buenos Aires'),(1145,'Ciudad Autonoma Buenos Aires'),(1146,'Ciudad Autonoma Buenos Aires'),(1147,'CABA - San Telmo'),(1148,'CABA - Constitucion'),(1149,'Ciudad Autonoma Buenos Aires'),(1150,'CABA - San Telmo'),(1151,'CABA - Constitucion'),(1152,'CABA - Constitucion'),(1153,'CABA - Constitucion'),(1154,'CABA - Constitucion'),(1155,'CABA - San Telmo'),(1156,'CABA - San Telmo'),(1157,'CABA - San Telmo'),(1158,'CABA - San Telmo'),(1159,'CABA - La Boca'),(1160,'CABA - La Boca'),(1161,'CABA - La Boca'),(1162,'CABA - La Boca'),(1163,'CABA - La Boca'),(1164,'CABA - La Boca'),(1165,'CABA - La Boca'),(1166,'CABA - La Boca'),(1167,'CABA - La Boca'),(1168,'CABA - La Boca'),(1169,'CABA - La Boca'),(1170,'CABA - Balvanera'),(1171,'CABA - Balvanera'),(1172,'CABA - Almagro'),(1173,'CABA - Balvanera'),(1174,'CABA - Almagro'),(1175,'CABA - Almagro'),(1176,'CABA - Almagro'),(1177,'CABA - Almagro'),(1178,'CABA - Almagro'),(1179,'CABA - Almagro'),(1180,'CABA - Almagro'),(1181,'CABA - Almagro'),(1182,'CABA - Almagro'),(1183,'CABA - Almagro'),(1184,'CABA - Almagro'),(1185,'CABA - Almagro'),(1186,'CABA - Balvanera'),(1187,'CABA - Balvanera'),(1188,'CABA - Balvanera'),(1189,'CABA - Balvanera'),(1190,'CABA - Balvanera'),(1191,'CABA - Almagro'),(1192,'CABA - Almagro'),(1193,'CABA - Balvanera'),(1194,'CABA - Almagro'),(1195,'CABA - Almagro'),(1196,'CABA - Almagro'),(1197,'CABA - Almagro'),(1198,'CABA - Balvanera'),(1199,'CABA - Almagro'),(1200,'CABA - Almagro'),(1201,'CABA - Almagro'),(1202,'CABA - Almagro'),(1203,'CABA - Balvanera'),(1204,'CABA - Almagro'),(1205,'CABA - Almagro'),(1206,'CABA - Balvanera'),(1207,'CABA - Balvanera'),(1208,'CABA - Balvanera'),(1209,'CABA - Balvanera'),(1210,'CABA - Almagro'),(1211,'CABA - Balvanera'),(1212,'CABA - Almagro'),(1213,'CABA - Balvanera'),(1214,'CABA - Balvanera'),(1215,'CABA - Balvanera'),(1216,'CABA - Almagro'),(1217,'CABA - Almagro'),(1218,'CABA - Almagro'),(1219,'CABA - San Cristobal'),(1220,'CABA - San Cristobal'),(1221,'CABA - San Cristobal'),(1222,'CABA - San Cristobal'),(1223,'CABA - Balvanera'),(1224,'CABA - Balvanera'),(1225,'CABA - San Cristobal'),(1226,'CABA - Boedo'),(1227,'CABA - San Cristobal'),(1228,'CABA - Boedo'),(1229,'CABA - San Cristobal'),(1230,'CABA - San Cristobal'),(1231,'CABA - San Cristobal'),(1232,'CABA - San Cristobal'),(1233,'CABA - Boedo'),(1234,'CABA - Almagro'),(1235,'CABA - Boedo'),(1236,'CABA - Boedo'),(1237,'CABA - Boedo'),(1238,'CABA - Boedo'),(1239,'CABA - Boedo'),(1240,'CABA - Boedo'),(1241,'CABA - Boedo'),(1242,'CABA - Boedo'),(1243,'CABA - Boedo'),(1244,'CABA - San Cristobal'),(1245,'CABA - San Cristobal'),(1246,'CABA - San Cristobal'),(1247,'CABA - San Cristobal'),(1248,'CABA - San Cristobal'),(1249,'CABA - San Cristobal'),(1250,'CABA - Almagro'),(1251,'CABA - San Cristobal'),(1252,'CABA - San Cristobal'),(1253,'CABA - San Cristobal'),(1254,'CABA - San Cristobal'),(1255,'CABA - Parque Patricios'),(1256,'CABA - Parque Patricios'),(1257,'CABA - Almagro'),(1258,'CABA - San Cristobal'),(1259,'CABA - San Cristobal'),(1260,'CABA - San Cristobal'),(1261,'CABA - Parque Patricios'),(1262,'CABA - Parque Patricios'),(1263,'CABA - Parque Patricios'),(1264,'CABA - Parque Patricios'),(1265,'CABA - Constitucion'),(1266,'CABA - Constitucion'),(1267,'CABA - Constitucion'),(1268,'CABA - Constitucion'),(1269,'CABA - Barracas'),(1270,'CABA - Barracas'),(1271,'CABA - Barracas'),(1272,'CABA - Barracas'),(1273,'CABA - Barracas'),(1274,'CABA - Barracas'),(1275,'CABA - Constitucion'),(1276,'CABA - Barracas'),(1277,'CABA - Barracas'),(1278,'CABA - Barracas'),(1279,'CABA - Barracas'),(1280,'CABA - Barracas'),(1281,'CABA - Barracas'),(1282,'CABA - Barracas'),(1283,'CABA - Constitucion'),(1284,'CABA - Barracas'),(1285,'CABA - Barracas'),(1286,'CABA - Barracas'),(1287,'CABA - Barracas'),(1288,'CABA - Barracas'),(1289,'CABA - Barracas'),(1290,'CABA - Barracas'),(1291,'CABA - Barracas'),(1292,'CABA - Barracas'),(1293,'CABA - Barracas'),(1294,'CABA - Barracas'),(1295,'CABA - Barracas'),(1296,'CABA - Barracas'),(1298,'Ciudad Autonoma Buenos Aires'),(1300,'Ciudad Autonoma Buenos Aires'),(1301,'Ciudad Autonoma Buenos Aires'),(1302,'Ciudad Autonoma Buenos Aires'),(1303,'Ciudad Autonoma Buenos Aires'),(1304,'Ciudad Autonoma Buenos Aires'),(1305,'Ciudad Autonoma Buenos Aires'),(1306,'Ciudad Autonoma Buenos Aires'),(1307,'Ciudad Autonoma Buenos Aires'),(1308,'Ciudad Autonoma Buenos Aires'),(1309,'Ciudad Autonoma Buenos Aires'),(1310,'Ciudad Autonoma Buenos Aires'),(1311,'Ciudad Autonoma Buenos Aires'),(1312,'Ciudad Autonoma Buenos Aires'),(1313,'Ciudad Autonoma Buenos Aires'),(1314,'Ciudad Autonoma Buenos Aires'),(1315,'Ciudad Autonoma Buenos Aires'),(1316,'Ciudad Autonoma Buenos Aires'),(1317,'Ciudad Autonoma Buenos Aires'),(1318,'Ciudad Autonoma Buenos Aires'),(1319,'Ciudad Autonoma Buenos Aires'),(1320,'Ciudad Autonoma Buenos Aires'),(1321,'Ciudad Autonoma Buenos Aires'),(1322,'Ciudad Autonoma Buenos Aires'),(1323,'Ciudad Autonoma Buenos Aires'),(1324,'Ciudad Autonoma Buenos Aires'),(1325,'Ciudad Autonoma Buenos Aires'),(1326,'Ciudad Autonoma Buenos Aires'),(1327,'Ciudad Autonoma Buenos Aires'),(1328,'Ciudad Autonoma Buenos Aires'),(1329,'Ciudad Autonoma Buenos Aires'),(1330,'Ciudad Autonoma Buenos Aires'),(1331,'Ciudad Autonoma Buenos Aires'),(1332,'Ciudad Autonoma Buenos Aires'),(1333,'Ciudad Autonoma Buenos Aires'),(1334,'Ciudad Autonoma Buenos Aires'),(1335,'Ciudad Autonoma Buenos Aires'),(1336,'Ciudad Autonoma Buenos Aires'),(1337,'Ciudad Autonoma Buenos Aires'),(1338,'Ciudad Autonoma Buenos Aires'),(1339,'Ciudad Autonoma Buenos Aires'),(1340,'Ciudad Autonoma Buenos Aires'),(1341,'Ciudad Autonoma Buenos Aires'),(1342,'Ciudad Autonoma Buenos Aires'),(1343,'Ciudad Autonoma Buenos Aires'),(1344,'Ciudad Autonoma Buenos Aires'),(1345,'Ciudad Autonoma Buenos Aires'),(1346,'Ciudad Autonoma Buenos Aires'),(1347,'Ciudad Autonoma Buenos Aires'),(1348,'Ciudad Autonoma Buenos Aires'),(1349,'Ciudad Autonoma Buenos Aires'),(1350,'Ciudad Autonoma Buenos Aires'),(1351,'Ciudad Autonoma Buenos Aires'),(1352,'Ciudad Autonoma Buenos Aires'),(1353,'Ciudad Autonoma Buenos Aires'),(1354,'Ciudad Autonoma Buenos Aires'),(1355,'Ciudad Autonoma Buenos Aires'),(1356,'Ciudad Autonoma Buenos Aires'),(1357,'Ciudad Autonoma Buenos Aires'),(1358,'Ciudad Autonoma Buenos Aires'),(1359,'Ciudad Autonoma Buenos Aires'),(1360,'Ciudad Autonoma Buenos Aires'),(1361,'Ciudad Autonoma Buenos Aires'),(1362,'Ciudad Autonoma Buenos Aires'),(1363,'Ciudad Autonoma Buenos Aires'),(1364,'Ciudad Autonoma Buenos Aires'),(1365,'Ciudad Autonoma Buenos Aires'),(1366,'Ciudad Autonoma Buenos Aires'),(1367,'Ciudad Autonoma Buenos Aires'),(1368,'Ciudad Autonoma Buenos Aires'),(1369,'Ciudad Autonoma Buenos Aires'),(1370,'Ciudad Autonoma Buenos Aires'),(1371,'Ciudad Autonoma Buenos Aires'),(1372,'Ciudad Autonoma Buenos Aires'),(1373,'Ciudad Autonoma Buenos Aires'),(1374,'Ciudad Autonoma Buenos Aires'),(1375,'Ciudad Autonoma Buenos Aires'),(1376,'Ciudad Autonoma Buenos Aires'),(1377,'Ciudad Autonoma Buenos Aires'),(1378,'Ciudad Autonoma Buenos Aires'),(1379,'Ciudad Autonoma Buenos Aires'),(1380,'Ciudad Autonoma Buenos Aires'),(1381,'Ciudad Autonoma Buenos Aires'),(1382,'Ciudad Autonoma Buenos Aires'),(1383,'Ciudad Autonoma Buenos Aires'),(1384,'Ciudad Autonoma Buenos Aires'),(1385,'Ciudad Autonoma Buenos Aires'),(1386,'Ciudad Autonoma Buenos Aires'),(1387,'Ciudad Autonoma Buenos Aires'),(1388,'Ciudad Autonoma Buenos Aires'),(1389,'Ciudad Autonoma Buenos Aires'),(1390,'Ciudad Autonoma Buenos Aires'),(1391,'Ciudad Autonoma Buenos Aires'),(1392,'Ciudad Autonoma Buenos Aires'),(1393,'Ciudad Autonoma Buenos Aires'),(1394,'Ciudad Autonoma Buenos Aires'),(1395,'Ciudad Autonoma Buenos Aires'),(1396,'Ciudad Autonoma Buenos Aires'),(1397,'Ciudad Autonoma Buenos Aires'),(1398,'Ciudad Autonoma Buenos Aires'),(1399,'Ciudad Autonoma Buenos Aires'),(1400,'Ciudad Autonoma Buenos Aires'),(1401,'Ciudad Autonoma Buenos Aires'),(1402,'Ciudad Autonoma Buenos Aires'),(1405,'CABA - Villa Crespo'),(1406,'CABA - Flores'),(1407,'CABA - Velez Sarfield'),(1408,'CABA - Liniers'),(1409,'Ciudad Autonoma Buenos Aires'),(1410,'Ciudad Autonoma Buenos Aires'),(1411,'Ciudad Autonoma Buenos Aires'),(1412,'Ciudad Autonoma Buenos Aires'),(1413,'Ciudad Autonoma Buenos Aires'),(1414,'CABA - Caballito'),(1416,'CABA - Villa Gral. Mitre'),(1417,'CABA - Villa Devoto'),(1419,'CABA - Saavedra'),(1420,'Ciudad Autonoma Buenos Aires'),(1421,'Ciudad Autonoma Buenos Aires'),(1422,'Ciudad Autonoma Buenos Aires'),(1423,'Ciudad Autonoma Buenos Aires'),(1424,'CABA - Parque Chacabuco'),(1425,'CABA - Palermo'),(1426,'CABA - Colegiales'),(1427,'CABA - Chacarita'),(1428,'CABA - Belgrano'),(1429,'CABA - NuÃ±ez'),(1430,'CABA - Villa Ortuzar'),(1431,'CABA - Villa Urquiza'),(1432,'Ciudad Autonoma Buenos Aires'),(1433,'Ciudad Autonoma Buenos Aires'),(1434,'Ciudad Autonoma Buenos Aires'),(1435,'Ciudad Autonoma Buenos Aires'),(1436,'Ciudad Autonoma Buenos Aires'),(1437,'CABA - Nueva Pompeya'),(1439,'CABA - Villa Lugano'),(1440,'CABA - Mataderos'),(1453,'Ciudad Autonoma Buenos Aires'),(1599,'Ciudad Autonoma Buenos Aires'),(1602,'Florida'),(1603,'Villa Martelli'),(1604,'Florida Oeste'),(1605,'Munro'),(1606,'Carapachay'),(1607,'Villa Adelina'),(1608,'Troncos Del Talar'),(1609,'Boulogne'),(1610,'Ricardo Rojas'),(1611,'Don Torcuato'),(1612,'Ingeniero Adolfo Sourdeaux'),(1613,'Los Polvorines'),(1614,'Villa De Mayo'),(1615,'Grand Bourg'),(1616,'Malvinas Argentinas'),(1617,'General Pacheco'),(1618,'El Talar'),(1619,'Garin'),(1620,'Maquinista F Savio'),(1621,'Benavidez'),(1622,'Dique Lujan'),(1623,'Ingeniero Maschwitz'),(1624,'Rincon De Milberg'),(1625,'Barrio El Cazador'),(1626,'Barrio El Cazador'),(1627,'Matheu'),(1628,'Loma Verde'),(1629,'Pilar'),(1630,'Pilar'),(1631,'Villa Rosa'),(1632,'Manzanares'),(1633,'Fatima'),(1634,'Pilar'),(1635,'Km. 45'),(1636,'Olivos'),(1637,'La Lucila'),(1638,'Vicente Lopez'),(1639,'Martinez'),(1640,'Martinez'),(1641,'Acassuso'),(1642,'San Isidro'),(1643,'Beccar'),(1644,'Victoria'),(1645,'Virreyes'),(1646,'San Fernando'),(1647,'A Baltazar Chico'),(1648,'Carupa'),(1649,'Arroyo Bicho Feo'),(1650,'Billinghurst'),(1651,'San Andres'),(1652,'Tres De Febrero'),(1653,'Malaver'),(1654,'San Martin'),(1655,'Chilavert'),(1657,'Loma Hermosa'),(1659,'Campo De Mayo'),(1660,'Jose Clemente Paz'),(1661,'Bella Vista'),(1662,'MuÃ±iz'),(1663,'San Miguel'),(1664,'Manuel Alberti'),(1665,'Jose Clemente Paz'),(1666,'Jose Clemente Paz'),(1667,'Alberti'),(1669,'Del Viso'),(1670,'Nordelta Tigre'),(1672,'Villa Lynch'),(1674,'Villa Saenz PeÃ±a'),(1675,'Villa Raffo'),(1676,'Santos Lugares'),(1678,'Caseros'),(1682,'Martin Coronado'),(1683,'Martin Coronado'),(1684,'Ciudad Jardin Del Palomar'),(1685,'Ciudad Jardin El Palomar'),(1686,'Hurlingham'),(1687,'Pablo Podesta'),(1688,'Villa Santos Tesei'),(1689,'Remedios De Escalada'),(1690,'Once De Setiembre'),(1691,'Churruca'),(1692,'El Libertador'),(1701,'Ciudadela'),(1702,'Ciudadela'),(1703,'Jose Ingenieros'),(1704,'Ramos Mejia'),(1706,'Haedo'),(1707,'Domingo Faustino Sarmiento'),(1708,'Moron'),(1710,'Castelar'),(1712,'Castelar'),(1713,'Villa Gobernador Udaondo'),(1714,'Ituzaingo'),(1715,'Barrio Parque Leloir'),(1716,'Libertad'),(1717,'General Rodriguez'),(1718,'San Antonio De Padua'),(1721,'Parque San Martin'),(1722,'Merlo'),(1723,'Agustin Ferrari'),(1724,'Mariano Acosta'),(1727,'Marcos Paz'),(1731,'Villars'),(1733,'Plomer'),(1735,'9 De abril'),(1736,'Trujui'),(1737,'Kilometro 77'),(1738,'La Reja'),(1739,'Estacion General Hornos'),(1740,'Cuartel V'),(1741,'Enrique Fynn'),(1742,'Paso Del Rey'),(1743,'Moreno'),(1744,'Moreno'),(1745,'La Reja'),(1746,'Francisco Alvarez'),(1747,'General Rodriguez'),(1748,'General Rodriguez'),(1749,'General Rodriguez'),(1750,'Las Malvinas'),(1751,'Villa Insuperable'),(1752,'Lomas Del Mirador'),(1753,'Villa Luzuriaga'),(1754,'San Justo'),(1755,'Rafael Castillo'),(1756,'Isidro Casnova'),(1757,'Gregorio De La Ferrere'),(1758,'Gonzalez Catan'),(1759,'Gonzalez Catan'),(1761,'Pontevedra'),(1763,'Virrey Del Pino'),(1764,'Virrey Del Pino'),(1765,'Isidro Casanova'),(1766,'Tablada'),(1768,'Ciudad De Eduardo Madero'),(1770,'Aldo Bonzi'),(1771,'Mercado Central'),(1772,'Villa Celina'),(1773,'Ingeniero Budge'),(1774,'La Salada'),(1776,'9 De abril'),(1778,'Ciudad Evita'),(1780,'B Nuestra SeÃ±ora De La Paz'),(1781,'Barrio Santa Catalina'),(1782,'M Paz Barrio Martin Fierro'),(1783,'M Paz Barrio La Lonja'),(1784,'M Paz Barrio La Milagrosa'),(1785,'Aldo Bonzi'),(1786,'20 De junio'),(1787,'M Paz Barrio El Moro'),(1788,'M Paz Barrio Urioste'),(1789,'B Sarmiento Don Rolando'),(1790,'M Paz Barrio El Martillo'),(1791,'M Paz Barrio Bernasconi'),(1792,'Barrio Los Aromos San Patricio'),(1793,'Barrio El Zorzal'),(1801,'Canning'),(1802,'Aeropuerto Ezeiza'),(1803,'La Union'),(1804,'Ezeiza'),(1805,'El Jaguel'),(1806,'Canning'),(1807,'Canning'),(1808,'Vicente Casares'),(1809,'Maximo Paz'),(1811,'Alejandro Petion'),(1812,'Carlos Spegazzini'),(1813,'Carlos Spegazzini'),(1814,'CaÃ±uelas'),(1815,'Uribelarrea'),(1816,'Colonia Santa Rosa'),(1821,'Banfield'),(1822,'Valentin Alsina'),(1823,'Gerli'),(1824,'Lanus'),(1825,'Monte Chingolo'),(1826,'Remedios De Escalada'),(1827,'Banfield'),(1828,'Banfield'),(1829,'Villa Albertina'),(1831,'Villa Fiorito'),(1832,'Lomas De Zamora'),(1833,'Turdera'),(1834,'Temperley'),(1835,'America Unida'),(1836,'Llavallol'),(1837,'Sourigues'),(1838,'Luis Guillon'),(1839,'9 De abril'),(1840,'Ezpeleta Oeste'),(1841,'Monte Grande'),(1842,'El Jaguel'),(1843,'Solano'),(1844,'San Jose'),(1845,'Jose Marmol'),(1846,'Adrogue'),(1847,'Rafael Calzada'),(1848,'Ministro Rivadavia'),(1849,'Claypole'),(1850,'Barrio Don Orione'),(1851,'Malvinas Argentinas'),(1852,'Burzaco'),(1853,'Villa Vatteone'),(1854,'Longchamps'),(1855,'Villa La Florida'),(1856,'Glew'),(1857,'Pereyra'),(1858,'Villa Numancia'),(1859,'Gobernador Costa'),(1860,'Villa EspaÃ±a'),(1861,'Platanos'),(1862,'Guernica'),(1863,'Zeballos'),(1864,'Alejandro Korn'),(1865,'San Vicente'),(1866,'El Pampero'),(1867,'Santa Rosa'),(1868,'PiÃ±eyro'),(1869,'Gerli'),(1870,'Avellaneda'),(1871,'Dock Sud'),(1872,'Sarandi'),(1873,'Crucesita'),(1874,'Villa Dominico'),(1875,'Wilde'),(1876,'Bernal Este'),(1877,'Don Bosco'),(1878,'Quilmes'),(1879,'Quilmes Oeste'),(1880,'Berazategui'),(1881,'San Francisco Solano'),(1882,'Ezpeleta Este'),(1883,'Bernal Oeste'),(1884,'Berazategui'),(1885,'Guillermo E Hudson'),(1886,'Ranelagh'),(1887,'Florencio Varela'),(1888,'Florencio Varela'),(1889,'Bosques'),(1890,'Jose Maria Gutierrez'),(1891,'Ingeniero Allan'),(1892,'Villa Brown'),(1893,'Centro Agricola El Pato'),(1894,'Pereyra'),(1895,'Arturo Segui'),(1896,'City Bell'),(1897,'Gonnet'),(1898,'Gonnet'),(1900,'La Plata'),(1901,'Estacion Moreno'),(1902,'La Plata'),(1903,'Abasto'),(1904,'La Plata'),(1905,'Poblet'),(1906,'La Plata'),(1907,'El Carmen'),(1908,'La Plata'),(1909,'Arana'),(1910,'La Plata'),(1911,'Bartolome Bavio'),(1912,'La Plata'),(1913,'Cristino Benavidez'),(1914,'La Plata'),(1915,'Arbuco'),(1916,'La Plata'),(1917,'Luis Chico'),(1918,'Estacion Gomez'),(1919,'B A Punta Indio'),(1921,'Alvarez Jonte'),(1923,'Berisso'),(1924,'Beriso'),(1925,'Ensenada'),(1926,'Ensenada'),(1927,'Escuela Naval Militar Rio Santiago'),(1929,'Isla Santiago'),(1931,'Punta Lara'),(1933,'Abasto'),(1935,'Estacion Moreno'),(1942,'Los Talas'),(1947,'Atalaya'),(1948,'Empalme Magdalena'),(1952,'Punta Indio'),(1954,'Pipinas'),(1972,'Oliden'),(1980,'Campo Lope Seco'),(1981,'B Las Mandarinas'),(1983,'Gomez'),(1984,'Domselaar'),(1986,'Altamirano'),(1987,'Alegre'),(2000,'Rosario'),(2001,'Rosario'),(2002,'Rosario'),(2003,'Rosario'),(2004,'Rosario'),(2005,'Rosario'),(2006,'Rosario'),(2007,'Rosario'),(2008,'Rosario'),(2009,'Rosario'),(2010,'Rosario'),(2011,'Rosario'),(2012,'Rosario'),(2013,'Rosario'),(2014,'Rosario'),(2015,'Loma Verde'),(2020,'Zelaya'),(2025,'Manzanares'),(2032,'Villa Astolfi'),(2045,'La Fraternidad'),(2046,'Las Malvinas'),(2100,'Charigue'),(2101,'Albarellos'),(2102,'Villa Amelia'),(2103,'Coronel Bogado'),(2104,'Juan B Molina'),(2105,'CaÃ±ada Rica'),(2106,'Sargento Cabral'),(2107,'Alvarez'),(2108,'Rosario'),(2109,'Acebal'),(2110,'Pavon Arriba'),(2111,'Francisco Paz'),(2112,'Uranga'),(2113,'Peyrano'),(2114,'Coronel Dominguez'),(2115,'Colonia Valdez'),(2117,'Alcorta'),(2118,'Cepeda'),(2119,'Arminda'),(2120,'Pueblo MuÃ±oz'),(2121,'Perez'),(2122,'Pujato'),(2123,'Campo Calvo'),(2124,'Pueblo Nuevo'),(2125,'Zavalla'),(2126,'Alvear'),(2127,'General Lagos'),(2128,'Arroyo Seco'),(2129,'Pueblo Esther'),(2130,'Alvear'),(2131,'Coronel Arnold'),(2132,'Funes'),(2133,'La Vanguardia'),(2134,'Roldan'),(2135,'Carmen Del Sauce'),(2136,'Correa'),(2138,'CarcaraÃ±a'),(2139,'ChaÃ±ar Ladeado'),(2141,'La Salada'),(2142,'Campo Medina'),(2143,'Ibarlucea'),(2144,'Campo Horquesco'),(2146,'Clason'),(2147,'San Genaro Norte'),(2148,'Campo Castro'),(2149,'Casas'),(2150,'Lucio V Lopez'),(2151,'Clason'),(2152,'Granadero Baigorria'),(2153,'Las Bandurrias'),(2154,'Capitan Bermudez'),(2156,'A D G S Lorenzo'),(2158,'Fray Luis Beltran'),(2170,'Candelaria Sud'),(2173,'Campo Pesoa'),(2174,'Sanford'),(2175,'Barlett'),(2176,'Villada'),(2177,'Bigand'),(2179,'Bombal'),(2181,'Los Molinos'),(2183,'Arequito'),(2184,'Los Nogales'),(2185,'C Toscana Primera'),(2186,'San Jose De La Esquina'),(2187,'Arteaga'),(2189,'Colonia Los Vascos'),(2200,'Las Quintas'),(2201,'Ricardone'),(2202,'Cerana'),(2204,'Jesus Maria'),(2206,'Campo Paletta'),(2208,'Gaboto'),(2209,'Maciel'),(2212,'Campo Galloso'),(2214,'Aldao'),(2215,'Andino'),(2216,'C Tres Marias'),(2218,'Carrizales'),(2222,'Diaz'),(2223,'Pinzon'),(2240,'Campo Garcia'),(2241,'Larrechea'),(2242,'Arijon'),(2243,'San Fabian'),(2244,'Arocena'),(2245,'Barrio Caima'),(2246,'Barrancas'),(2248,'B De Irigoyen'),(2249,'Irigoyen'),(2252,'Colonia Piaggio'),(2253,'Campo Gimenez'),(2254,'Gessler'),(2255,'Campo Rodriguez'),(2256,'San Eugenio'),(2257,'Colonia Belgrano'),(2258,'Campo Quiqones'),(2261,'Urquiza'),(2282,'Berdier'),(2300,'C Bella Italia'),(2301,'Bella Italia'),(2302,'Castellones'),(2303,'Angelica'),(2305,'Lehmann'),(2306,'Vila'),(2307,'Ataliva'),(2308,'Bella Italia'),(2309,'C Reina Margarita'),(2310,'C Castellanos'),(2311,'Adolfo Alsina'),(2312,'C San Antonio'),(2313,'Colonia Berlin'),(2315,'Estacion Saguier'),(2317,'Casablanca'),(2318,'Aurelia'),(2319,'Egusquiza'),(2320,'Pueblo San Antonio'),(2321,'Saguier'),(2322,'Cabaqa El Cisne'),(2323,'Villa San Jose'),(2324,'Colonia Tacurales'),(2326,'Bealistock'),(2330,'Eusebia'),(2334,'El Descanso'),(2339,'Ambrosetti'),(2340,'Ceres'),(2341,'Aromito'),(2342,'Campo El Mataco'),(2343,'La Geraldina'),(2344,'Achaval Rodriguez'),(2345,'Campo Botto'),(2346,'Villa Trinidad'),(2347,'C Malhman Sud'),(2348,'Monigotes'),(2349,'Colonia Maunier'),(2350,'La Rubia'),(2351,'Colonia Rosa'),(2352,'Ambrosetti'),(2354,'C La Victoria'),(2355,'Malbran'),(2356,'Alarcon'),(2357,'C S. Rosa Aguirre'),(2367,'Colonia Marina'),(2400,'La Milka'),(2401,'Colonia Castelar'),(2403,'Bauer Y Sigel'),(2404,'Colonia Josefina'),(2405,'Colonia Cello'),(2407,'Campo Clucellas'),(2409,'Estrada'),(2411,'Colonia Santa Rita'),(2413,'Colonia Anita'),(2414,'Colonia Valtelina'),(2415,'C Nuevo Piamonte'),(2416,'La Paquita'),(2417,'Altos De Chipion'),(2418,'Seeber'),(2419,'Brinkmann'),(2420,'Colonia Vignaud'),(2421,'C Dos Hermanos'),(2422,'Quebracho Herrado'),(2423,'C Prosperidad'),(2424,'Colonia Cristina'),(2425,'La Francia'),(2426,'C San Bartolome'),(2428,'C Del Banco Nacion'),(2429,'La Tordilla Norte'),(2430,'San Pedro'),(2432,'Arbol Chato'),(2433,'Colonia San Rafael'),(2434,'Arroyito'),(2435,'C La Tordilla'),(2436,'C A De Alvarez'),(2438,'Frontera'),(2440,'B Belgrano Ortiz'),(2441,'Crispi'),(2443,'Colonia Margarita'),(2445,'Cristolia'),(2446,'Pueblo Maria Juana'),(2447,'Los Sembrados'),(2449,'Avena'),(2451,'C Santa Anita'),(2452,'San Jorge'),(2453,'Carlos Pellegrini'),(2454,'Caqada Rosquin'),(2456,'Esmeralda'),(2469,'Candioti'),(2494,'Costa Del Toba'),(2495,'Santa Felicia'),(2500,'CaÃ±ada De Gomez'),(2501,'Berretta'),(2502,'Maria Luisa Correa'),(2503,'Villa Eloisa'),(2504,'Bustinza'),(2505,'Campo La Riviere'),(2506,'Correa'),(2508,'Armstrong'),(2512,'Campo La Paz'),(2520,'Campo Charo'),(2521,'Montes De Oca'),(2523,'Bouquet'),(2525,'Flora'),(2527,'C San Francisco'),(2529,'Piamonte'),(2531,'Landeta'),(2533,'Los Cardos'),(2534,'El Trebol'),(2535,'Candelaria Norte'),(2537,'Los Quirquinchos'),(2550,'Barrio Belgrano'),(2551,'Los Patos'),(2553,'Justiniano Posse'),(2555,'Campo General Paz'),(2557,'Idiazabal'),(2559,'C La Leoncita'),(2560,'San Antonio De Litin'),(2561,'Los Molles'),(2563,'El Overo'),(2564,'Monte LeÃ±a'),(2566,'San Marcos Sud'),(2568,'Las Lagunitas'),(2572,'Ballesteros'),(2573,'Ballesteros Sud'),(2580,'C La Muriucha'),(2581,'C 25 Los Surgentes'),(2583,'General Baldissera'),(2585,'Camilo Aldao'),(2586,'Camilo Aldao'),(2587,'Enfermera Kelly'),(2588,'Saladillo'),(2589,'Monte Buey'),(2592,'C Veinticinco'),(2594,'Barrio La Fortuna'),(2595,'OrdoÃ±ez'),(2600,'Boca P 25'),(2601,'La Inglesita'),(2602,'La Chispa'),(2603,'Chapuy'),(2604,'S F De S Fe'),(2605,'Otto Bemberg'),(2607,'Campo Quirno'),(2609,'C Santa Lucia'),(2610,'Don Bosco'),(2611,'E Christophersen'),(2613,'San Gregorio'),(2615,'La Gama'),(2617,'Sancti Spiritu'),(2618,'Carmen'),(2619,'Kilometro 57'),(2622,'Maggiolo'),(2624,'Arias'),(2625,'Cavanagh'),(2627,'Pueblo Gambande'),(2630,'Firmat'),(2631,'Cora'),(2633,'Chovet'),(2635,'Carlos Dose'),(2637,'C La Catalana'),(2639,'Berabevu'),(2640,'Godeken'),(2643,'Cafferata'),(2644,'C Gral B O Higins'),(2645,'C La Palestina'),(2646,'Colonia Italiana'),(2650,'Canals'),(2651,'Colonia Bremen'),(2652,'Colonia Bismarck'),(2653,'Pueblo Italiano'),(2655,'W. Escalante'),(2657,'Laborde'),(2659,'Colonia Barge'),(2660,'Isla Verde'),(2661,'Cortaderas'),(2662,'Alejo Ledesma'),(2663,'Alejo Ledesma'),(2664,'Benjamin Gould'),(2670,'La Carlota'),(2671,'Assunta'),(2675,'Chazon'),(2677,'Ucacha'),(2679,'Campo Sol De Mayo'),(2681,'Etruria'),(2684,'Los Cisnes'),(2685,'Colonia Maipu'),(2686,'Alejandro'),(2700,'Barrio Trocha'),(2701,'12 De agosto'),(2702,'Pergamino'),(2703,'Pinzon'),(2704,'Rancagua'),(2705,'C De Noviembre'),(2706,'Guerrico'),(2707,'El Jaguel'),(2709,'Los Indios'),(2711,'Almacen Piatti'),(2713,'Manuel Ocampo'),(2715,'El Socorro'),(2717,'Acevedo'),(2718,'Fontezuela'),(2720,'Caminera G Lopez'),(2721,'El A. Pergamino'),(2722,'Wheelwright'),(2723,'El Bagual'),(2724,'Urquiza'),(2725,'Hughes'),(2726,'Labordeboy'),(2728,'Melincue'),(2729,'Carreras'),(2732,'Cuatro De Febrero'),(2740,'Almacen La Colina'),(2741,'El Retiro'),(2743,'Arroyo Dulce'),(2744,'Gahan'),(2745,'Gahan'),(2747,'Ines Indart'),(2751,'Almacen Castro'),(2752,'A El Descanso'),(2753,'La Luisa'),(2754,'Campo Crisol'),(2755,'ViÃ±a'),(2760,'Bagues'),(2761,'E Santa Catalina'),(2763,'Flamenco'),(2764,'Campo La Nena'),(2800,'Arroyo Negro'),(2801,'Alto Verde'),(2802,'Otamendi'),(2804,'Campana'),(2805,'A La Paciencia'),(2806,'Las Palmas'),(2808,'Atucha'),(2812,'Arroyo De La Cruz'),(2813,'Arroyo De La Cruz'),(2814,'Los Cardales'),(2816,'Alto Los Cardales'),(2820,'Colonia El Potrero'),(2821,'Arroyo Del Cura'),(2822,'Gualeguaychu'),(2823,'A Schez Grande'),(2824,'C Gdor Basavilbaso'),(2826,'Aldea San Juan'),(2827,'Aldea San Antonio'),(2828,'C Nueva Montevideo'),(2840,'Albardon'),(2841,'Aldea Asuncion'),(2843,'General Galarza'),(2845,'G Mansilla'),(2846,'Libertador Gral San Martin'),(2847,'Gobernador Echague'),(2848,'Berisso'),(2851,'Irazusta Estacion'),(2852,'Alarcon'),(2854,'Dos Hermanas'),(2900,'S Nic. De Los As'),(2901,'La Emilia'),(2902,'San Nicolas De Los Arroyos'),(2903,'Campo Salles'),(2905,'General Rojo'),(2907,'General Conesa'),(2909,'Estancias'),(2912,'La Querencia'),(2913,'Sanchez'),(2914,'Barrio D. Antonio'),(2915,'Aguirrezabala'),(2916,'El Jupiter'),(2918,'Empal V Constitu'),(2919,'Copacabana'),(2920,'Pavon'),(2921,'Godoy'),(2922,'Theobald'),(2923,'Rueda'),(2930,'Las Flores'),(2931,'Isla De Los Laureles'),(2933,'Colonia Velez'),(2935,'Algarrobo'),(2938,'Alsina'),(2942,'Baradero'),(2943,'Ireneo Portela'),(2944,'Rio Tala'),(2946,'El Espinillo'),(2948,'Vuelta De Obligado'),(2953,'Doyle'),(3000,'Barranquitas'),(3001,'Alto Verde'),(3002,'Santa Fe'),(3003,'C Los Zapallos'),(3004,'Santa Fe'),(3005,'San Javier'),(3006,'Santa Fe'),(3007,'Empalme San Carlos'),(3008,'Santa Fe'),(3009,'El Tropezon'),(3010,'El Tropezon'),(3011,'Campo Magnin'),(3012,'S Jero Del Sauce'),(3013,'Colonia Matilde'),(3014,'Angel Gallardo'),(3015,'San Jeronimo Norte'),(3016,'Colonia San Jose'),(3017,'Bajo Las Tunas'),(3018,'Candioti'),(3019,'San Agustin'),(3020,'Campo S Domingo'),(3021,'Campo Andino'),(3022,'S Rosa D Calchines'),(3023,'Cululu'),(3024,'Sarmiento'),(3025,'Colonia Clara'),(3027,'La Pelada'),(3028,'Maria Luisa'),(3029,'C Adolfo Alsina'),(3030,'Monte Vera'),(3031,'Arroyo Aguiar'),(3032,'Nelson'),(3033,'Las Tunas'),(3034,'Sauce Viejo'),(3036,'Aromos'),(3038,'Cayastacito'),(3039,'Mariano Saavedra'),(3040,'Asuncion Maria'),(3041,'C Ariacaiquin'),(3042,'Abipones'),(3043,'San Agustin'),(3044,'Gobernador Crespo'),(3045,'Campo Zavalla'),(3046,'Arrascaeta'),(3048,'C Sol De Mayo'),(3049,'Hipatia'),(3050,'Calchaqui'),(3051,'Alejandra'),(3052,'Colonia La Blanca'),(3053,'Pericota'),(3054,'Colonia La Negra'),(3056,'C La Nicolasa'),(3057,'La CigueÃ±a'),(3058,'Vuelta Del Pirata'),(3060,'Campo San Jose'),(3061,'Antonio Pini'),(3062,'Campo Belgrano'),(3063,'Fortin Inca'),(3064,'Bandera'),(3066,'C Independencia'),(3067,'Pozo Borrado'),(3068,'Santa Margarita'),(3069,'G Perez De Denis'),(3070,'El Aguara'),(3071,'Aguara Grande'),(3072,'La Lucila'),(3074,'Aguara'),(3075,'LogroÃ±o'),(3076,'Huanqueros'),(3077,'Esteban Rams'),(3079,'Saladero M Cabral'),(3080,'Colonia Pujol'),(3081,'Cavour'),(3082,'Cavour'),(3083,'Grutly'),(3085,'Pilar'),(3087,'Felicia'),(3088,'Nuevo Torino'),(3089,'S Jose Del Rincon'),(3091,'Cabal'),(3092,'Emilia'),(3094,'Ramayon'),(3097,'Kilometro 302'),(3100,'Aldea Chaleco'),(3101,'A Spatzenkutter'),(3102,'Parana'),(3103,'Aldea Santafecina'),(3104,'Parana'),(3105,'Diamante'),(3106,'Parana'),(3107,'Colonia Avellaneda'),(3108,'Parana'),(3109,'Colonia Centenario'),(3110,'Strobel'),(3111,'Almacen C Schubert'),(3112,'Colonia Loma Negra'),(3113,'La Balsa Parana'),(3114,'Aldea Maria Luisa'),(3115,'Aldea Protestante'),(3116,'Aldea Cuesta'),(3117,'El Taller'),(3118,'C Ctario Cnia Nvo'),(3122,'Antonio Tomas'),(3123,'Aldea Santa Maria'),(3124,'Tabossi'),(3125,'Dmento G Guemes'),(3126,'Villa Urquiza'),(3127,'Alcete'),(3128,'Colonia Berro'),(3129,'C Hernandarias'),(3130,'General Racedo'),(3131,'Tezanos Pinto'),(3132,'El Pingo'),(3133,'Arroyo Burgos'),(3134,'Antonio Tomas Sud'),(3135,'Aldea San Rafael'),(3136,'Alcaraz Norte'),(3137,'Alcaraz Sud'),(3138,'Alcaraz 2Do'),(3141,'Parana'),(3142,'Alcaracito'),(3144,'Alcaraz 1Ro'),(3145,'Lucas Gonzalez'),(3150,'Aldea Santa Maria'),(3151,'Antelo'),(3152,'Sauce'),(3153,'Kilmetro 165'),(3155,'Costa Del Nogoya'),(3156,'Betbeder'),(3158,'20 De Setiembre'),(3162,'Aranguren'),(3163,'Aranguren'),(3164,'Colonia Rivas'),(3165,'Las Tejas'),(3166,'El Martillo'),(3170,'Alberto Gerchunoff'),(3172,'Kilometro 208'),(3174,'Altamirano Sud'),(3175,'Cruc 8A Seccion'),(3176,'Estacion Sola'),(3177,'Altamirano Norte'),(3178,'Durazno'),(3179,'Guardamonte'),(3180,'Federal'),(3181,'Arroyo Moreira'),(3183,'Carpinchoris'),(3184,'San Gustavo'),(3185,'Basualdo'),(3187,'Atencio'),(3188,'Estacion Alcaraz'),(3190,'Arroyo Hondo'),(3191,'San Gustavo'),(3192,'El Colorado'),(3194,'Guayquiraro'),(3196,'Arroyo Vega'),(3197,'Abra Guazu'),(3199,'Los Laureles'),(3200,'Colonia Los Sauces'),(3201,'C Ayui Grande'),(3202,'Concordia'),(3203,'Arroyo Grande'),(3204,'Ayui Parada'),(3205,'Concordia'),(3206,'Bella Union Paraje'),(3207,'Colonia Adela'),(3208,'C La Matilde S Ana'),(3212,'Arroyo El Mocho'),(3213,'Osvaldo Magnasco'),(3214,'Estacion Yerua'),(3215,'Los Charruas'),(3216,'Arroyo Hondo'),(3217,'La Criolla'),(3218,'Arroyo Palmar'),(3220,'Arroyo Timboy'),(3222,'Buen Retiro'),(3224,'Colonia Libertad'),(3226,'Kilometro 104'),(3228,'C Ensanche Sauce'),(3229,'C Santa Elvira'),(3230,'5Ta Sec. Ombucito'),(3231,'C Arocena Ina'),(3232,'Cabred'),(3233,'Villa Del Rosario'),(3234,'Bompland'),(3235,'Parada Pucheta'),(3236,'Tapebicua'),(3240,'Colonia Egido'),(3241,'Campo De Villamil'),(3244,'Las Moscas'),(3246,'Achiras'),(3248,'Caraguata'),(3249,'Santa Anita'),(3250,'V Ortiz Pereira'),(3252,'Aldea San Jorge'),(3254,'C La Blanquita'),(3260,'Arroyo Molino'),(3261,'C Oficial N 6'),(3262,'Caseros'),(3263,'1 De mayo'),(3264,'Concepcion Del Uruguay'),(3265,'Arroyo Caraballo'),(3267,'C De Las Ovejas'),(3269,'Arroyo Baru'),(3270,'Colonia Hocker'),(3271,'La Clarita'),(3272,'C 5 Ensche De Mayo'),(3275,'Colonia Hughes'),(3280,'Arroyo Urquiza'),(3281,'Calera'),(3282,'Liebig'),(3283,'C San Francisco'),(3284,'El Brillante'),(3285,'Berduc'),(3286,'Pueblo Colorado'),(3287,'Aldea San Gregorio'),(3300,'Arroyo'),(3301,'Posadas'),(3302,'Aguara Cua'),(3303,'Posadas'),(3304,'Garupa'),(3305,'Posadas'),(3306,'Aguapey'),(3307,'San Jose'),(3308,'Arroyo Magdalena'),(3309,'Bella Vista'),(3310,'Miguel Lanus'),(3311,'O Victor Andrade'),(3312,'Barrio Don Santiago'),(3313,'Cerro Azul'),(3315,'Arroyo Del Medio'),(3316,'Santa Ana'),(3317,'Bonpland'),(3318,'Colonia Martires'),(3319,'Cerro Cora'),(3320,'Puerto EspaÃ±a'),(3321,'Colonia Polana'),(3322,'Aparicio Cue'),(3323,'C Domingo Savio'),(3324,'Gobernador Roca'),(3325,'Mojon Grande'),(3326,'Colonia Oasis'),(3327,'Corpus'),(3328,'Jardin America'),(3329,'Oasis'),(3330,'Posadas'),(3331,'Mbopicua'),(3332,'Capiovi'),(3333,'Puerto Leoni'),(3334,'3 De mayo'),(3335,'Hipolito Yrigoyen'),(3336,'Colonia Almafuerte'),(3337,'2 De mayo'),(3338,'El Soberbio'),(3339,'Salto Encantado'),(3340,'Boqueron'),(3341,'Santo Tome'),(3342,'Aguapey'),(3343,'Colonia Garabi'),(3344,'2 De julio'),(3345,'San Carlos'),(3346,'Bacacay'),(3349,'Garruchos'),(3350,'Apostoles'),(3351,'Azara'),(3352,'San Pedro'),(3353,'Itacaruare'),(3354,'Tres Capones'),(3355,'Arrechea'),(3356,'San Vicente'),(3357,'Buena Vista'),(3358,'Santa Rosa'),(3359,'Estacion Apostoles'),(3360,'Arroyo Fedor'),(3361,'Acaragua'),(3362,'Campo Grande'),(3363,'9 De julio'),(3364,'1 De mayo'),(3365,'Obera'),(3366,'Barracon'),(3367,'Campo Ramon'),(3368,'Villa Bonita'),(3369,'Guarani'),(3370,'22 De diciembre'),(3371,'Caburei'),(3372,'Caraguatay'),(3373,'Panambi'),(3374,'Libertad'),(3375,'Campo Viera'),(3376,'Wanda'),(3377,'Santa Rita'),(3378,'Esperanza'),(3379,'25 De mayo'),(3380,'Eldorado'),(3381,'Puerto Piray'),(3382,'9 De Julio Km 20'),(3383,'San Antonio'),(3384,'Barrancon'),(3385,'Almirante Brown'),(3386,'Colonia Caraguatay'),(3387,'Santiago De Liniers'),(3388,'Colonia Victoria'),(3389,'Puerto Pinares'),(3390,'Colonia El Alcazar'),(3391,'Garruchos'),(3393,'Colonia Alberdi'),(3396,'Garuhape'),(3400,'Corrientes'),(3401,'Arroyo Pelon'),(3402,'Corrientes'),(3403,'Aguirre Cue'),(3404,'Corrientes'),(3405,'Algarrobal Puisoye'),(3406,'Corrientes'),(3407,'Aguay'),(3408,'Corrientes'),(3409,'Arroyo San Juan'),(3410,'Corrientes'),(3411,'Laguna Brava'),(3412,'4Ta Sec. E Grande'),(3414,'Abra'),(3416,'Arroyo Ceibal'),(3418,'Bartolome Mitre'),(3420,'Angua'),(3421,'Bajo Guazu'),(3423,'Batara'),(3424,'La Blanqueada'),(3425,'Costa Grande'),(3426,'Tatacua'),(3427,'Abra'),(3428,'Estacion Saladas'),(3432,'Bella Vista'),(3433,'Carrizal Norte'),(3436,'Abalo'),(3440,'C C Echeverria'),(3441,'Algarrobo'),(3442,'Barrio V Cordoba'),(3443,'Colonia Mendez Bar'),(3444,'G Juan E Martinez'),(3445,'9 De julio'),(3446,'Kilometro 374'),(3448,'Alamo'),(3449,'Boliche Lata'),(3450,'8 De diciembre'),(3451,'Batelito'),(3452,'Pedro R Fernandez'),(3453,'Ifran'),(3454,'Buena Esperanza'),(3460,'Arroyo Castillo'),(3461,'Abo Nezu'),(3463,'Aristia'),(3465,'Arroyo Casco'),(3466,'Abeli'),(3470,'Arroyo Grande'),(3471,'Alen Cue');
+/*!40000 ALTER TABLE `codpostal` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `condicion_pago`
+--
+
+DROP TABLE IF EXISTS `condicion_pago`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `condicion_pago` (
+  `ID_plazo` varchar(5) NOT NULL,
+  `Condicion` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID_plazo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `condicion_pago`
+--
+
+LOCK TABLES `condicion_pago` WRITE;
+/*!40000 ALTER TABLE `condicion_pago` DISABLE KEYS */;
+INSERT INTO `condicion_pago` VALUES ('P001','Pago Adelantado'),('P015','Pago a 15 dÃ­as FF'),('P030','Pago a 30 dÃ­as FF'),('P045','Pago a 45 dÃ­as FF'),('P060','Pago a 60 dÃ­as FF'),('P090','Pago a 90 dÃ­as FF'),('P505','Pago a acordar');
+/*!40000 ALTER TABLE `condicion_pago` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ctacte_proveedor`
+--
+
+DROP TABLE IF EXISTS `ctacte_proveedor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ctacte_proveedor` (
+  `ID_Ctacte` int NOT NULL AUTO_INCREMENT,
+  `ID_proveedor` int NOT NULL,
+  `ID_factura` int NOT NULL,
+  `CBU` varchar(100) NOT NULL,
+  `BANCO` int NOT NULL,
+  PRIMARY KEY (`ID_Ctacte`,`ID_proveedor`),
+  KEY `ID_proveedor` (`ID_proveedor`),
+  KEY `ID_factura` (`ID_factura`),
+  KEY `BANCO` (`BANCO`),
+  CONSTRAINT `ctacte_proveedor_ibfk_1` FOREIGN KEY (`ID_proveedor`) REFERENCES `proveedores` (`ID_proveedor`),
+  CONSTRAINT `ctacte_proveedor_ibfk_2` FOREIGN KEY (`ID_factura`) REFERENCES `factura` (`ID_factura`),
+  CONSTRAINT `ctacte_proveedor_ibfk_3` FOREIGN KEY (`BANCO`) REFERENCES `banco` (`ID_Banco`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ctacte_proveedor`
+--
+
+LOCK TABLES `ctacte_proveedor` WRITE;
+/*!40000 ALTER TABLE `ctacte_proveedor` DISABLE KEYS */;
+INSERT INTO `ctacte_proveedor` VALUES (1,1,10010,'0071904311100094524218',7),(2,2,10011,'0297299711100060797480',29),(3,3,10012,'0208777011100044825095',20),(4,4,10013,'0293680411100060248766',29),(5,5,10014,'1474191711100076743831',147),(6,6,10015,'1502028511100026307171',150),(7,7,10016,'1917018011100004325425',191),(8,8,10017,'2592965311100021784852',259),(10,6,10019,'1502028511100026307171',150),(12,8,10021,'2592965311100021784852',259),(14,12,10023,'4323910111100070917908',432),(15,13,10024,'3306149611100032973618',330),(16,14,10025,'3861812711100008983324',386);
+/*!40000 ALTER TABLE `ctacte_proveedor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `fact_prod`
+--
+
+DROP TABLE IF EXISTS `fact_prod`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `fact_prod` (
+  `ID_factura` int NOT NULL,
+  `ID_producto` int NOT NULL,
+  `Cantidadpedida` int NOT NULL,
+  PRIMARY KEY (`ID_factura`,`ID_producto`),
+  KEY `ID_producto` (`ID_producto`),
+  CONSTRAINT `fact_prod_ibfk_1` FOREIGN KEY (`ID_factura`) REFERENCES `factura` (`ID_factura`),
+  CONSTRAINT `fact_prod_ibfk_2` FOREIGN KEY (`ID_producto`) REFERENCES `producto` (`ID_producto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fact_prod`
+--
+
+LOCK TABLES `fact_prod` WRITE;
+/*!40000 ALTER TABLE `fact_prod` DISABLE KEYS */;
+INSERT INTO `fact_prod` VALUES (10010,1,850000),(10011,2,850000),(10012,2,850000),(10013,2,850000),(10014,2,850000),(10015,3,1700000),(10016,3,1700000),(10017,3,1700000),(10019,4,850000),(10021,5,850000),(10023,6,850000),(10024,6,850000),(10025,6,850000);
+/*!40000 ALTER TABLE `fact_prod` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `factura`
+--
+
+DROP TABLE IF EXISTS `factura`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `factura` (
+  `ID_producto` int NOT NULL,
+  `ID_proveedor` int NOT NULL,
+  `ID_factura` int NOT NULL,
+  `precio` int NOT NULL,
+  `plazo_de_pago` varchar(5) NOT NULL,
+  `cantidad` int NOT NULL,
+  `IVA` decimal(18,2) NOT NULL,
+  `moneda` tinytext NOT NULL,
+  `Total` int NOT NULL,
+  `Fecha` date NOT NULL,
+  PRIMARY KEY (`ID_factura`),
+  KEY `ID_producto` (`ID_producto`),
+  KEY `ID_proveedor` (`ID_proveedor`),
+  KEY `plazo_de_pago` (`plazo_de_pago`),
+  CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`ID_producto`) REFERENCES `producto` (`ID_producto`),
+  CONSTRAINT `factura_ibfk_2` FOREIGN KEY (`ID_proveedor`) REFERENCES `proveedores` (`ID_proveedor`),
+  CONSTRAINT `factura_ibfk_3` FOREIGN KEY (`plazo_de_pago`) REFERENCES `condicion_pago` (`ID_plazo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `factura`
+--
+
+LOCK TABLES `factura` WRITE;
+/*!40000 ALTER TABLE `factura` DISABLE KEYS */;
+INSERT INTO `factura` VALUES (1,1,10010,23,'P030',850000,21.00,'ARS',23655500,'2021-06-01'),(2,2,10011,88,'P090',850000,21.00,'ARS',90508000,'2021-07-03'),(2,3,10012,88,'P015',850000,10.50,'ARS',75585400,'2021-07-04'),(2,4,10013,88,'P060',850000,27.00,'ARS',94996000,'2021-07-05'),(2,5,10014,88,'P030',850000,21.00,'ARS',90508000,'2021-07-06'),(3,6,10015,36,'P060',1700000,21.00,'ARS',74052000,'2021-08-07'),(3,7,10016,36,'P015',1700000,10.50,'ARS',61842600,'2021-08-08'),(3,8,10017,36,'P045',1700000,0.00,'ARS',122400000,'2021-08-09'),(4,6,10019,52,'P090',850000,0.00,'ARS',88400000,'2021-09-10'),(5,8,10021,33,'P045',850000,21.00,'ARS',33940500,'2021-10-13'),(6,12,10023,433,'P030',850000,0.00,'ARS',736100000,'2021-11-14'),(6,13,10024,433,'P045',850000,0.00,'ARS',736100000,'2021-11-15'),(6,14,10025,433,'P015',850000,21.00,'ARS',445340500,'2021-11-16'),(6,3,10026,100,'P030',250000,21.00,'ARS',30250000,'2021-11-13'),(2,5,10027,100,'P030',250000,21.00,'ARS',30250000,'2020-11-13');
+/*!40000 ALTER TABLE `factura` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `fechafactura_check` BEFORE INSERT ON `factura` FOR EACH ROW BEGIN DECLARE msg VARCHAR(500);
+IF (NEW.Fecha < '2021-01-01' ) THEN 
+SET msg = "NO SE PERMINTEN FACT ANTERIORES A 2021";
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
+END IF;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `ins_mov_factura` AFTER INSERT ON `factura` FOR EACH ROW INSERT INTO movimientos_factura 
+(id_movimiento, fecha, usuario_id, ID_factura, precio, IVA, tipo_operacion)
+VALUES(NULL, NOW(), SESSION_USER(), NEW.ID_factura, NEW.precio, NEW.IVA, 'INSERT: Se insertó un nuevo registro en la tabla FACTURA.') */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Temporary view structure for view `facturas_iva_21`
+--
+
+DROP TABLE IF EXISTS `facturas_iva_21`;
+/*!50001 DROP VIEW IF EXISTS `facturas_iva_21`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `facturas_iva_21` AS SELECT 
+ 1 AS `ID_factura`,
+ 1 AS `cantidad`,
+ 1 AS `precio`,
+ 1 AS `moneda`,
+ 1 AS `IVA`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `metodo_de_pago`
+--
+
+DROP TABLE IF EXISTS `metodo_de_pago`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `metodo_de_pago` (
+  `ID_factura` int NOT NULL,
+  `ID_pago` int NOT NULL AUTO_INCREMENT,
+  `Fecha_pago` date NOT NULL,
+  `monto` int NOT NULL,
+  `moneda` varchar(3) NOT NULL,
+  `Ctacte_proveedor` int NOT NULL,
+  PRIMARY KEY (`ID_pago`),
+  KEY `ID_factura` (`ID_factura`),
+  KEY `Ctacte_proveedor` (`Ctacte_proveedor`),
+  CONSTRAINT `metodo_de_pago_ibfk_1` FOREIGN KEY (`ID_factura`) REFERENCES `factura` (`ID_factura`),
+  CONSTRAINT `metodo_de_pago_ibfk_2` FOREIGN KEY (`Ctacte_proveedor`) REFERENCES `ctacte_proveedor` (`ID_Ctacte`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `metodo_de_pago`
+--
+
+LOCK TABLES `metodo_de_pago` WRITE;
+/*!40000 ALTER TABLE `metodo_de_pago` DISABLE KEYS */;
+INSERT INTO `metodo_de_pago` VALUES (10010,33,'2021-07-01',23655500,'ARS',1),(10011,34,'2021-08-02',90508000,'ARS',2),(10012,35,'2021-08-03',75585400,'ARS',3),(10013,36,'2021-08-04',94996000,'ARS',4),(10014,37,'2021-08-05',90508000,'ARS',5),(10015,38,'2021-09-06',74052000,'ARS',6),(10016,39,'2021-09-07',61842600,'ARS',7),(10017,40,'2021-09-08',122400000,'ARS',8),(10019,42,'2021-10-10',88400000,'ARS',6),(10021,44,'2021-11-12',33940500,'ARS',8),(10023,46,'2021-12-14',736100000,'ARS',12),(10025,48,'2021-12-16',445340500,'ARS',14);
+/*!40000 ALTER TABLE `metodo_de_pago` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `movimientos_factura`
+--
+
+DROP TABLE IF EXISTS `movimientos_factura`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `movimientos_factura` (
+  `id_movimiento` int NOT NULL AUTO_INCREMENT,
+  `fecha` datetime NOT NULL,
+  `usuario_id` varchar(45) DEFAULT NULL,
+  `ID_factura` int DEFAULT NULL,
+  `precio` float DEFAULT '0',
+  `IVA` float DEFAULT '0',
+  `tipo_operacion` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id_movimiento`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movimientos_factura`
+--
+
+LOCK TABLES `movimientos_factura` WRITE;
+/*!40000 ALTER TABLE `movimientos_factura` DISABLE KEYS */;
+INSERT INTO `movimientos_factura` VALUES (1,'2022-04-03 18:56:29','root@localhost',10026,100,21,'INSERT: Se insertó un nuevo registro en la tabla FACTURA.'),(2,'2022-04-03 18:56:44','root@localhost',10027,100,21,'INSERT: Se insertó un nuevo registro en la tabla FACTURA.');
+/*!40000 ALTER TABLE `movimientos_factura` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `movimientos_producto`
+--
+
+DROP TABLE IF EXISTS `movimientos_producto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `movimientos_producto` (
+  `id_movimiento` int NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `hora` time DEFAULT NULL,
+  `usuario_id` varchar(45) DEFAULT NULL,
+  `base_de_datos` varchar(50) DEFAULT NULL,
+  `ID_producto` int DEFAULT NULL,
+  `Descripción` varchar(50) DEFAULT NULL,
+  `tipo_operacion` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id_movimiento`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movimientos_producto`
+--
+
+LOCK TABLES `movimientos_producto` WRITE;
+/*!40000 ALTER TABLE `movimientos_producto` DISABLE KEYS */;
+INSERT INTO `movimientos_producto` VALUES (1,'2022-04-03','18:57:33','root@localhost','entregafinal_gaillard',8,'Paquete de arroz','INSERT: Se insertó un nuevo registro en la tabla PRODUCTO.');
+/*!40000 ALTER TABLE `movimientos_producto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orden_de_compra`
+--
+
+DROP TABLE IF EXISTS `orden_de_compra`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orden_de_compra` (
+  `ID_producto` int NOT NULL,
+  `ID_pedido` int NOT NULL AUTO_INCREMENT,
+  `Precio` int NOT NULL,
+  `cantidad` int NOT NULL,
+  `UM` varchar(2) NOT NULL,
+  `Especificaciones` varchar(500) NOT NULL,
+  `usuario` int NOT NULL,
+  PRIMARY KEY (`ID_pedido`),
+  KEY `ID_producto` (`ID_producto`),
+  KEY `usuario` (`usuario`),
+  CONSTRAINT `orden_de_compra_ibfk_1` FOREIGN KEY (`ID_producto`) REFERENCES `producto` (`ID_producto`),
+  CONSTRAINT `orden_de_compra_ibfk_2` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`ID_empleado`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orden_de_compra`
+--
+
+LOCK TABLES `orden_de_compra` WRITE;
+/*!40000 ALTER TABLE `orden_de_compra` DISABLE KEYS */;
+INSERT INTO `orden_de_compra` VALUES (1,1,23,850000,'Un','envases de 350g',26323006),(2,2,88,850000,'Un','envases de 500g',26323006),(2,3,88,850000,'Un','envases de 500g',26323006),(2,4,88,850000,'Un','envases de 500g',26323006),(2,5,88,850000,'Un','envases de 500g',26323006),(3,6,36,1700000,'Un','paquetes de 500g',26323006),(3,7,36,1700000,'Un','paquetes de 500g',26323006),(3,8,36,1700000,'Un','paquetes de 500g',26323006),(3,9,36,1700000,'Un','paquetes de 500g',26323006),(4,10,52,850000,'Un','envases de 1Kg',23398671),(5,11,33,850000,'Un','envases de 1Kg',23398671),(5,12,33,850000,'Un','envases de 1Kg',23398671),(6,13,433,850000,'Un','envases de 1Kg',23398671),(6,14,433,850000,'Un','envases de 1Kg',23398671),(6,15,433,850000,'Un','envases de 1Kg',23398671),(6,16,433,850000,'Un','envases de 1Kg',23398671);
+/*!40000 ALTER TABLE `orden_de_compra` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `producto`
+--
+
+DROP TABLE IF EXISTS `producto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `producto` (
+  `ID_producto` int NOT NULL,
+  `ID_proveedor` int NOT NULL,
+  `Descripción` varchar(100) NOT NULL,
+  `Caracteristicas` varchar(100) NOT NULL,
+  PRIMARY KEY (`ID_producto`,`ID_proveedor`),
+  KEY `ID_proveedor` (`ID_proveedor`),
+  CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`ID_proveedor`) REFERENCES `proveedores` (`ID_proveedor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `producto`
+--
+
+LOCK TABLES `producto` WRITE;
+/*!40000 ALTER TABLE `producto` DISABLE KEYS */;
+INSERT INTO `producto` VALUES (1,1,'Envases de granos de choclo','Tipo Cremoso'),(2,2,'Envases de dulce','Membrillo'),(2,3,'Envases de dulce','Membrillo'),(2,4,'Envases de dulce','Membrillo'),(2,5,'Envases de dulce','Membrillo'),(3,6,'Paquetes de fideos','De semola'),(3,7,'Paquetes de fideos','De semola'),(3,8,'Paquetes de fideos','De semola'),(4,6,'Paquete de harina','Maiz'),(5,8,'Paquete de harina','Trigo'),(6,12,'Envase de leche ','Entera en polvo'),(6,13,'Envase de leche ','Entera en polvo'),(6,14,'Envase de leche ','Entera en polvo'),(8,4,'Paquete de arroz','Integral');
+/*!40000 ALTER TABLE `producto` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `ins_productos` AFTER INSERT ON `producto` FOR EACH ROW INSERT INTO movimientos_producto
+(id_movimiento, fecha, hora, usuario_id, base_de_datos, ID_producto, Descripción, tipo_operacion)
+VALUES(NULL, CURRENT_DATE(), CURRENT_TIME(), USER(), DATABASE(), NEW.ID_producto, NEW.Descripción, 'INSERT: Se insertó un nuevo registro en la tabla PRODUCTO.') */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Table structure for table `proveedores`
+--
+
+DROP TABLE IF EXISTS `proveedores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `proveedores` (
+  `ID_proveedor` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  `direccion` varchar(500) NOT NULL,
+  `CODPOSTAL` int NOT NULL,
+  `Contacto` varchar(50) NOT NULL,
+  `Rubro` tinytext NOT NULL,
+  PRIMARY KEY (`ID_proveedor`),
+  KEY `CODPOSTAL` (`CODPOSTAL`),
+  CONSTRAINT `proveedores_ibfk_1` FOREIGN KEY (`CODPOSTAL`) REFERENCES `codpostal` (`ID_CP`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `proveedores`
+--
+
+LOCK TABLES `proveedores` WRITE;
+/*!40000 ALTER TABLE `proveedores` DISABLE KEYS */;
+INSERT INTO `proveedores` VALUES (1,'INALPA INDUSTRIAS ALIMENTICIAS PAVON ARRIBA S.A.','BATISTONI 1168, piso 0, depto 0, PAVON ARRIBA, Santa Fe, Argentina',2110,'3469491025','ALIMENTOS'),(2,'ALISEC S.A.C.','santiago del estero 326, piso 1, depto 7, Ciudad Autonoma de Buenos Aires, Argentina',1075,'1143837271','ALIMENTOS'),(3,'DULCOR S.A.','Elvio E. Riba 1615, ARROYITO, Cordoba, Argentina',2434,'3576421790','ALIMENTOS'),(4,'NOMERO S.A.','PARAGUAY 419, piso 4, depto 14, Ciudad Autonoma de Buenos Aires, Argentina',1057,'541143114683','ALIMENTOS'),(5,'RIDOLFO HERMANOS','SANTA FE 1185, SAN JORGE, Santa Fe, Argentina',1059,'3406440498','ALIMENTOS'),(6,'SUPERMERCADO PUEBLO S.A.','Maipu 26, piso 7, depto C, Ciudad Autonoma de Buenos Aires, Argentina',1084,'541147650607','ALIMENTOS'),(7,'ALIMENTOS FRANSRO S.R.L.','Hipolito Yrigoyen 2042, piso 3, depto D, Ciudad Autonoma de Buenos Aires, Argentina',1089,'42387956','ALIMENTOS'),(8,'MORIXE HERMANOS S.A.C.I.','Esmeralda 1320, piso 7, depto A, Ciudad Autonoma de Buenos Aires, Argentina',1007,'32202050','ALIMENTOS'),(12,'XARABY S.A.','LOMAS VALENTINA 551, VALENTIN ALSINA, Buenos Aires, Argentina',1822,'1121642587','ALIMENTOS'),(13,'MAFRALAC ALIMENTICIA S.R.L.','RUTA NAC NÂº 11 KM 482.5 482.5, RECREO, Santa Fe, Argentina',3018,'3424961112','ALIMENTOS'),(14,'alimentos vida s.a.','Antonio Salellas 1825, PARANA, Entre Rios, Argentina',3100,'3424768031','ALIMENTOS');
+/*!40000 ALTER TABLE `proveedores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuario` (
+  `ID_empleado` int NOT NULL,
+  `Nombreyapellido` text NOT NULL,
+  `Area` tinytext NOT NULL,
+  PRIMARY KEY (`ID_empleado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (23398671,'Alfredo AndrÃ©s GAUDINO','Ministerio de Desarrollo'),(26323006,'Juan Ignacio ACCATTOLI','Ministerio de Desarrollo');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `vista_factura_condicionpago`
+--
+
+DROP TABLE IF EXISTS `vista_factura_condicionpago`;
+/*!50001 DROP VIEW IF EXISTS `vista_factura_condicionpago`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vista_factura_condicionpago` AS SELECT 
+ 1 AS `N_Fact`,
+ 1 AS `Total`,
+ 1 AS `Plazo_pago`,
+ 1 AS `Fecha`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `vista_proveedores`
+--
+
+DROP TABLE IF EXISTS `vista_proveedores`;
+/*!50001 DROP VIEW IF EXISTS `vista_proveedores`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vista_proveedores` AS SELECT 
+ 1 AS `ID_proveedor`,
+ 1 AS `RazonSocial`,
+ 1 AS `Contacto`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `vista_total_prov_inalpa`
+--
+
+DROP TABLE IF EXISTS `vista_total_prov_inalpa`;
+/*!50001 DROP VIEW IF EXISTS `vista_total_prov_inalpa`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vista_total_prov_inalpa` AS SELECT 
+ 1 AS `SUM(Total)`,
+ 1 AS `nombre`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `vista_totalxproveedor`
+--
+
+DROP TABLE IF EXISTS `vista_totalxproveedor`;
+/*!50001 DROP VIEW IF EXISTS `vista_totalxproveedor`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vista_totalxproveedor` AS SELECT 
+ 1 AS `nombre`,
+ 1 AS `Fecha`,
+ 1 AS `sum(factura.total)`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping events for database 'entregafinal_gaillard'
+--
+
+--
+-- Dumping routines for database 'entregafinal_gaillard'
+--
+/*!50003 DROP FUNCTION IF EXISTS `PRECIO_IVA` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `PRECIO_IVA`(param1 int, param2 DECIMAL(18,2)) RETURNS int
+    DETERMINISTIC
+begin
+    DECLARE Resultado INT;
+    set Resultado = (param1*param2);
+    RETURN Resultado;
+    END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `TotalUSD` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `TotalUSD`(precio INT, cantidad int) RETURNS float
+    NO SQL
+begin
+    DECLARE Resultado FLOAT;
+    DECLARE USD FLOAT;
+    SET USD = 108.56;
+    SET Resultado = (precio*cantidad*USD);
+RETURN Resultado;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Ordenarproveedores` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Ordenarproveedores`(IN parametro1 CHAR(50))
+BEGIN 
+	IF parametro1 <> '' THEN
+		SET @ordenar = CONCAT('ORDER BY ', parametro1) ;
+ELSE
+SET @ordenar = '' ;
+END IF;
+
+SET @clausula = CONCAT('SELECT * FROM proveedores ', @ordenar, ';');
+PREPARE ejecutarSQL from @clausula;
+EXECUTE ejecutarSQL;
+DEALLOCATE PREPARE ejecutarSQL;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_crear_producto` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_crear_producto`(IN parametro1 int, in parametro2 int, in parametro3 char(100), in parametro4 char (100))
+BEGIN
+IF parametro1 <> '' THEN 
+INSERT INTO entrega1_gaillard.producto (ID_producto,ID_proveedor,Descripción,Caracteristicas) VALUES (parametro1,parametro2,parametro3,parametro4);
+SELECT * FROM entrega1_gaillard.producto ORDER BY ID_producto ;
+ELSE 
+SELECT 'Error, no se pudo crear el proveedor';
+END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Final view structure for view `facturas_iva_21`
+--
+
+/*!50001 DROP VIEW IF EXISTS `facturas_iva_21`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `facturas_iva_21` AS select `factura`.`ID_factura` AS `ID_factura`,`factura`.`cantidad` AS `cantidad`,`factura`.`precio` AS `precio`,`factura`.`moneda` AS `moneda`,`factura`.`IVA` AS `IVA` from `factura` where (`factura`.`IVA` = 21.00) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vista_factura_condicionpago`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vista_factura_condicionpago`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vista_factura_condicionpago` AS select `factura`.`ID_factura` AS `N_Fact`,`factura`.`Total` AS `Total`,`condicion_pago`.`Condicion` AS `Plazo_pago`,`factura`.`Fecha` AS `Fecha` from (`factura` join `condicion_pago`) where (`factura`.`plazo_de_pago` = `condicion_pago`.`ID_plazo`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vista_proveedores`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vista_proveedores`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vista_proveedores` AS select `proveedores`.`ID_proveedor` AS `ID_proveedor`,`proveedores`.`nombre` AS `RazonSocial`,`proveedores`.`Contacto` AS `Contacto` from `proveedores` order by `proveedores`.`nombre` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vista_total_prov_inalpa`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vista_total_prov_inalpa`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vista_total_prov_inalpa` AS select sum(`factura`.`Total`) AS `SUM(Total)`,`proveedores`.`nombre` AS `nombre` from (`factura` join `proveedores` on((`factura`.`ID_proveedor` = `proveedores`.`ID_proveedor`))) where (`proveedores`.`nombre` like 'inalp%') */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vista_totalxproveedor`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vista_totalxproveedor`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vista_totalxproveedor` AS select `proveedores`.`nombre` AS `nombre`,`factura`.`Fecha` AS `Fecha`,sum(`factura`.`Total`) AS `sum(factura.total)` from (`proveedores` join `factura` on((`proveedores`.`ID_proveedor` = `factura`.`ID_proveedor`))) group by `proveedores`.`nombre` order by `proveedores`.`nombre` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-04-10 11:45:21
